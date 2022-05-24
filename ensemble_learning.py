@@ -5,7 +5,7 @@ import argparse
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
-from sklearn.metrics import precision_score,confusion_matrix
+from sklearn.metrics import confusion_matrix
 import multiprocessing as mp
 
 
@@ -60,6 +60,12 @@ class svm_ensemble_learning() :
         
         return metric_array
 
+def vote_for_ensemble(result,threshold) :
+    vote = np.sum(result,axis = 0)
+    vote[vote >= threshold] = 1
+    vote[vote < threshold] = 0
+    return vote
+
 def main() :
 
     parser = argparse.ArgumentParser()
@@ -88,10 +94,12 @@ def main() :
     print(exp_df.shape)
     ensemble = svm_ensemble_learning(hbv_exp,no_hbv_exp,standard_exp.T,y_overall,run = n_run,t = n_thread)
     ###differ positive / negative ratio
-    ensemble.ratio = 5
-    for i in range(10):
-        result = ensemble.ensemble_svm()
-        np.save(args.output_path + 'ensemble_result_' + str(i) + '.npy',result)
+    for r in np.arange(5,55,5) :
+        ensemble.ratio = r
+        for i in range(10):
+            result = ensemble.ensemble_svm()
+            result = np.sum(result,axis = 0)
+            np.save(args.output_path + 'lihc_ensemble_result_ratio_' +str(r)+'_test_'+ str(i) + '.npy',result)
 
 if __name__ == '__main__':
     main()
