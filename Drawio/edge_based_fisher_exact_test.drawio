@@ -1,0 +1,90 @@
+<mxfile host="65bd71144e">
+    <diagram id="4DFJXmStFCu0w3CV8Vv6" name="Page-1">
+        <mxGraphModel dx="728" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="0" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="1" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="4" value="Edge fisher exact test" style="shape=table;childLayout=tableLayout;rowLines=0;columnLines=0;startSize=40;collapsible=0;recursiveResize=0;expand=0;pointerEvents=0;fontStyle=1;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="80" width="280" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="with intersection" style="swimlane;horizontal=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;startSize=40;collapsible=0;recursiveResize=0;expand=0;pointerEvents=0;fontStyle=1" parent="4" vertex="1">
+                    <mxGeometry y="40" width="280" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Corr &gt; threshold" style="swimlane;connectable=0;startSize=40;collapsible=0;recursiveResize=0;expand=0;pointerEvents=0;" parent="5" vertex="1">
+                    <mxGeometry x="40" width="120" height="120" as="geometry">
+                        <mxRectangle width="120" height="120" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="E1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="6" vertex="1">
+                    <mxGeometry x="30" y="60" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Corr &lt; threshold" style="swimlane;connectable=0;startSize=40;collapsible=0;recursiveResize=0;expand=0;pointerEvents=0;" parent="5" vertex="1">
+                    <mxGeometry x="160" width="120" height="120" as="geometry">
+                        <mxRectangle width="120" height="120" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" value="E2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="7" vertex="1">
+                    <mxGeometry x="30" y="60" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Without intersection" style="swimlane;horizontal=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;startSize=40;collapsible=0;recursiveResize=0;expand=0;pointerEvents=0;" parent="4" vertex="1">
+                    <mxGeometry y="160" width="280" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="swimlane;connectable=0;startSize=0;collapsible=0;recursiveResize=0;expand=0;pointerEvents=0;" parent="13" vertex="1">
+                    <mxGeometry x="40" width="120" height="120" as="geometry">
+                        <mxRectangle width="120" height="120" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="E3" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="14" vertex="1">
+                    <mxGeometry x="30" y="45" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="swimlane;connectable=0;startSize=0;collapsible=0;recursiveResize=0;expand=0;pointerEvents=0;" parent="13" vertex="1">
+                    <mxGeometry x="160" width="120" height="120" as="geometry">
+                        <mxRectangle width="120" height="120" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="E4" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="15" vertex="1">
+                    <mxGeometry x="30" y="45" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="Validation GO term" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="420" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="" style="endArrow=classic;html=1;fontFamily=Times New Roman;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="35" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="200" y="360" as="sourcePoint"/>
+                        <mxPoint x="440" y="380" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="200" y="450"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="37" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="360" y="90" width="275" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="&lt;font face=&quot;Times New Roman&quot;&gt;N = number of gene GO involved&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="37" vertex="1">
+                    <mxGeometry y="80" width="180" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="&lt;font face=&quot;Times New Roman&quot;&gt;m = correlation sparse matrix&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="37" vertex="1">
+                    <mxGeometry width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="&lt;span style=&quot;color: rgb(0 , 0 , 0) ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250) ; display: inline ; float: none&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;idx = GO involved genes&lt;/font&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" parent="37" vertex="1">
+                    <mxGeometry y="40" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="&lt;span style=&quot;color: rgb(0 , 0 , 0) ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250) ; display: inline ; float: none&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;E1 = sum( m[idx,idx] )&lt;/font&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" parent="37" vertex="1">
+                    <mxGeometry y="115" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="" style="group" parent="37" vertex="1" connectable="0">
+                    <mxGeometry y="150" width="275" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="\$\$E1 + E2 = C_{2\}^{n\}\$\$" style="text;whiteSpace=wrap;html=1;align=center;" parent="34" vertex="1">
+                    <mxGeometry width="240" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="\$\$E3 = N_{c\} - E1\$\$" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="34" vertex="1">
+                    <mxGeometry x="5" y="70" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="\$\$E3 + E4 = Total - (E1+E2) = C_{2\}^{all\} - C_{2\}^{N\}\$\$" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="34" vertex="1">
+                    <mxGeometry x="5" y="40" width="270" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
