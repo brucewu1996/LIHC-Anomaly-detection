@@ -40,20 +40,6 @@ class svm_ensemble_learning() :
         self.positive_matrix = self.overall_matrix[pos_idx,:]
         self.hallmark_matrix = self.overall_matrix[hallmark_idx,:]
         self.negative_matrix = self.overall_matrix[n_idx,:]
-
-    '''
-    def data_split(self) :
-        
-        exp_df : data frame of expression profile
-        y : numpy array ,annotation of exp_df, must be binary
-        
-        exp_df = self.overall_matrix
-        y = self.y_overall
-        pos_idx = y == 1
-        n_idx = y == 0
-        self.positive_matrix = exp_df[pos_idx,:]
-        self.negative_matrix = exp_df[n_idx,:]
-    '''
         
     def single_svm(self,n) :
         population = range(self.negative_matrix.shape[0])
@@ -129,7 +115,7 @@ def main() :
     #exp_df = pd.concat([exp_df,syn_df],axis=0)
     if args.stand :
         standard_exp = standardization(exp_df)
-        standard_exp = standard_exp.T
+        standard_exp = standard_exp.T  # type: ignore
     else :
         standard_exp = exp_df.to_numpy()
 

@@ -15,7 +15,7 @@ def plot_pc_explain_ratio(exp_matrix,output_path,explained_ratio_threshold=0.8) 
     for i in range(2,100) :
         pca = PCA(n_components=i)
         exp_pca = pca.fit_transform(exp_matrix)
-        explained_ratio = sum(pca.explained_variance_ratio_)
+        explained_ratio = sum(pca.explained_variance_ratio_)  # type: ignore
         sum_variance.append(explained_ratio)
         if explained_ratio > explained_ratio_threshold :
             break
@@ -84,10 +84,10 @@ def data_augmentatation_pca_scatterplot(origin_m,synthetic_m,fig_output_path) :
     sns.scatterplot(data = pca_df,x = 'PC1',y = 'PC2',hue = 'Label',palette='Set2',ax = axs[0])
     sns.scatterplot(data = pca_df,x = 'PC3',y = 'PC2',hue = 'Label',palette='Set2',ax=axs[1])
 
-    axs[0].set_xlabel("PC1 (" + str(round(100*pca.explained_variance_ratio_[0],2)) + '%)')
-    axs[0].set_ylabel("PC2 (" + str(round(100*pca.explained_variance_ratio_[1],2)) + '%)')
-    axs[1].set_xlabel("PC3 (" + str(round(100*pca.explained_variance_ratio_[2],2)) + '%)')
-    axs[1].set_ylabel("PC2 (" + str(round(100*pca.explained_variance_ratio_[1],2)) + '%)')
+    axs[0].set_xlabel("PC1 (" + str(round(100*pca.explained_variance_ratio_[0],2)) + '%)')  # type: ignore
+    axs[0].set_ylabel("PC2 (" + str(round(100*pca.explained_variance_ratio_[1],2)) + '%)')  # type: ignore
+    axs[1].set_xlabel("PC3 (" + str(round(100*pca.explained_variance_ratio_[2],2)) + '%)')  # type: ignore
+    axs[1].set_ylabel("PC2 (" + str(round(100*pca.explained_variance_ratio_[1],2)) + '%)')  # type: ignore
     plt.savefig(fig_output_path,dpi = 300,bbox_inches = 'tight')
     
     
@@ -101,7 +101,7 @@ def main() :
     args = parser.parse_args()
     
     exp_profile = pd.read_csv(args.input,sep='\t',index_col=0)
-    hallmark = pd.read_csv(args.reference,sep='\t',header=None)
+    hallmark = pd.read_csv(args.reference,sep='\t')
     hallmark.columns = ["EnsID"]  # type: ignore
     hallmark_gene = hallmark['EnsID'].values
     hallmark_m = exp_profile.loc[hallmark_gene,:]
