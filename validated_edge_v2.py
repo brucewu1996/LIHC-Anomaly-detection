@@ -260,7 +260,7 @@ def main() :
     ## remove go term which level less than threshold
     index2go,gene2go_matrix = remove_go_by_level(gene2go_matrix,index2go,go2namespace,graph_dict)
     ## import vote file
-    vote = pd.read_csv(args.vote,index_col=0)
+    vote = pd.read_csv(args.vote,sep='\t',index_col=0)
     vote = vote.loc[exp_profile.index,:]
     vote_csc = sparse.csc_matrix(vote.to_numpy())
     vote_csc.eliminate_zeros()
