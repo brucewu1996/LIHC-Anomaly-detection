@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-import argparse,pickle,os,time
+import argparse,pickle,time
 from scipy import sparse
 from numba import jit
 
@@ -48,6 +48,27 @@ def permutation(taxa_array,n_times = 1000) :
     else :
         pesudo_f = es_above_origin / n_times
     return pesudo_f,origin_es
+
+def matrix_2_corr_sparse_matrix(matrix,threshold=0.4,method='spearman') :
+    '''
+    matrix : dataframe; row is Gene, col is Sample.
+    '''
+    corr_matrix = matrix.T.corr(method=method)
+    corr_m = np.tril(corr_matrix)
+    np.fill_diagonal(corr_m,0)
+    corr_m[corr_m < threshold] = 0
+    sci_m = sparse.coo_matrix(corr_m)
+    
+    candidate_idx = np.unique(np.concatenate([sci_m.col,sci_m.row]))
+    candidate_gene = list(corr_matrix.index[candidate_idx])
+    return sci_m,candidate_gene
+
+def remove_uncorr_component(go_dict,exp_profile,threshold = 0.4,method='spearman') :
+    for go in go_dict.keys() :
+        gene = list(set(go_dict[go]).intersection(set(exp_profile.index)))
+        sub_matrix = exp_profile.loc[gene,:]
+        _,candidate_gene = matrix_2_corr_sparse_matrix(sub_matrix,threshold,method)
+        go_dict[go] = candidate_gene
 
 class gene_set_enrichment_analysis :
     def __init__(self,cluster_component,ranking,permutaion= 1000) :

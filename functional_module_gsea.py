@@ -3,7 +3,7 @@ import pandas as pd
 import pickle,time
 import argparse
 from scipy import sparse
-from utils.gsea import enrich_score,permutation,gene_set_enrichment_analysis
+from utils.gsea import permutation,gene_set_enrichment_analysis,matrix_2_corr_sparse_matrix,remove_uncorr_component
 
 
 class gene_set_enrichment(gene_set_enrichment_analysis) :
@@ -33,33 +33,33 @@ class gene_set_enrichment(gene_set_enrichment_analysis) :
                 
 def main() :
     parser = argparse.ArgumentParser()
-    parser.add_argument("-g", "--go",help="GO term 2 geneset dict after fisher exact test")
-    parser.add_argument("-v", "--vote",help="path of vote result")
-    parser.add_argument("-d", "--deseq",help="prefix of vote result")
+    parser.add_argument("-g","--go",help="GO term 2 geneset dict after fisher exact test")
+    parser.add_argument("-v","--vote",help="path of vote result")
+    parser.add_argument("-d","--deseq",help="prefix of vote result")
+    parser.add_argument("-e","--exp_profile",help='path of expression profile')
     parser.add_argument("-o","--output_path",type=str,help = 'path of ensemble model output')
     parser.add_argument("-p","--prefix",help = 'prefix of figure')
+    parser.add_argument("-w","--weight",type=bool,help = 'GSEA with vote only gene or Not')
     args = parser.parse_args()  
     
-    # load validated gene2go matrix
-    #gene2go_matrix_validated = sparse.load_npz('/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/candidate_functional_module/validated_gene2go_matrix.npz')
-    # load validate gene2go dict
-    #/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/candidate_functional_module/validated_go2gene_dict.pkl'
+    ### load GSEA go to gene dictionary
     with open(args.go,'rb') as f :
         go_genedict = pickle.load(f)
+    exp_profile = pd.read_csv(args.exp_profile,sep='\t',index_col=0)
+    #remove gene without any correlation > 0.4 with other genes
+    remove_uncorr_component(go_genedict,exp_profile)
     ###load GSEA sorting file (vote & fold change)
-    # vote
-    vote = pd.read_csv(args.vote,index_col=0)
-    '''
-    vote_csc = sparse.csc_matrix(vote.to_numpy())
-    vote_csc.eliminate_zeros()
-    '''
     ### vote level GSEA 
     print("GSEA analysis by vote of functional module is processing !!")
+    vote = pd.read_csv(args.vote,sep='\t',index_col=0)
     vote_start = time.time()
-    vote_ranking = list(vote.sort_values(by='Vote',ascending=False).index)
-    vote_weight = np.where(vote.sort_values(by='Vote',ascending=False)['Vote'].values > 0 ,1,0)  # type: ignore
-    vote_tsea = gene_set_enrichment(go_genedict,vote_ranking)
-    vote_tsea.gsea_with_weight(vote_weight)
+    if args.weight :
+        vote_weight = np.where(vote.sort_values(by='Vote',ascending=False)['Vote'].values > 0 ,1,0)  # type: ignore
+        vote_tsea = gene_set_enrichment(go_genedict,vote_weight)
+        vote_tsea.gsea_with_weight(vote_weight)
+    else :
+        vote_ranking = list(vote.sort_values(by='Vote',ascending=False).index)
+        vote_tsea = gene_set_enrichment(go_genedict,vote_ranking)
     df = vote_tsea.validate_component()
     pass_vote_go = list(df.index)
     pass_vote_go_gene_dict = dict()
@@ -67,10 +67,10 @@ def main() :
         pass_vote_go_gene_dict[go] = go_genedict[go]
     vote_end = time.time()
     print("Execution time of GSEA analysis by vote number is : %0.2f seconds" % (vote_end - vote_start))
-    # fold change
-    deseq_df = pd.read_csv(args.deseq,sep='\t',index_col=0)
     #activate functional module
+    #fold change
     print("GSEA analysis by fold-change of activate functional module is processing !!")
+    deseq_df = pd.read_csv(args.deseq,sep='\t',index_col=0)
     fc_activated_start = time.time()
     fc_ranking = list(deseq_df.sort_values(by='log2FoldChange',ascending=False).index)
     foldchange_gsea_activated = gene_set_enrichment_analysis(pass_vote_go_gene_dict,fc_ranking)
