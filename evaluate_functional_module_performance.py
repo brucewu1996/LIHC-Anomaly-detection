@@ -2,41 +2,49 @@ import numpy as np
 import pandas as pd
 import os,pickle,json
 import argparse
+from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score,recall_score,precision_score
+from sklearn.metrics import accuracy_score,auc, precision_recall_curve,roc_auc_score
 
 def functional_module_performance(exp_profile,metadata,candidate_go,go_2_gene_dict) :
     '''
-    exp_profile : dataframe; row is gene, columns is sample
+    exp_profile : dataframe; must be original un-standardized tcga fpkm file,row is gene, columns is sample 
     metadata : pd.series; index = sample, value = Label (Positive / Negative)
     candidate_go : list;  list of GO terms
     go_2_gene_dict : dict; key = GO term, value = list of GO. Product by functional_module_gsea.py
     '''
     
     y = np.where(metadata == 'Positive',1,0)
+    print("Number of %d postive samples in %d samples!" % (sum(y),len(y)))
     metric_matrix = np.zeros([len(candidate_go),7])
 
     for go_idx,go in enumerate(candidate_go) :
-        intersect_go = set(go_2_gene_dict[go]).intersection(exp_profile.index)
-        X = exp_profile.loc[intersect_go,:].to_numpy().T
-        x_train, x_test, y_train, y_test = train_test_split(X,y,train_size=0.3,stratify=y)
-        clf = LogisticRegression(random_state=0).fit(x_train, y_train)
+        intersect_gene = set(go_2_gene_dict[go]).intersection(exp_profile.index)
+        X = exp_profile.loc[intersect_gene,:].to_numpy().T
+        ##add re-standardize section
+        scaler = StandardScaler()
+        x = scaler.fit_transform(X)
+        
+        x_train, x_test, y_train, y_test = train_test_split(x,y,train_size=0.3,stratify=y)
+        clf = LogisticRegression(random_state=0,max_iter=500).fit(x_train, y_train)
         randomforest = RandomForestClassifier(max_depth=5,n_jobs=32).fit(x_train,y_train)
         y_pred = clf.predict(x_test)
         random_pred = randomforest.predict(x_test)
+        lr_precision, lr_recall, _ = precision_recall_curve(y_pred, y_test)
+        rf_precision, rf_recall, _ = precision_recall_curve(random_pred, y_test)
         
-        metric_matrix[go_idx,0] = len(intersect_go)
+        metric_matrix[go_idx,0] = len(intersect_gene)
         metric_matrix[go_idx,1] = accuracy_score(y_test,y_pred)
-        metric_matrix[go_idx,2] = precision_score(y_test,y_pred)
-        metric_matrix[go_idx,3] = recall_score(y_test,y_pred)
+        metric_matrix[go_idx,2] = roc_auc_score(y_test,y_pred)
+        metric_matrix[go_idx,3] = auc(lr_recall, lr_precision)
         metric_matrix[go_idx,4] = accuracy_score(y_test,random_pred)
-        metric_matrix[go_idx,5] = precision_score(y_test,random_pred)
-        metric_matrix[go_idx,6] = recall_score(y_test,random_pred)
+        metric_matrix[go_idx,5] = roc_auc_score(y_test,random_pred)
+        metric_matrix[go_idx,6] = auc(rf_recall, rf_precision)
 
-    logistic_df = pd.DataFrame(metric_matrix[:,0:4],index=candidate_go,columns=['Gene number','Accuracy','Precision','Recall'])
-    randomforest_df = pd.DataFrame(metric_matrix[:,(0,4,5,6)],index=candidate_go,columns=['Gene number','Accuracy','Precision','Recall'])
+    logistic_df = pd.DataFrame(metric_matrix[:,0:4],index=candidate_go,columns=['Gene number','Accuracy','AUC_ROC','AUC_PR'])
+    randomforest_df = pd.DataFrame(metric_matrix[:,(0,4,5,6)],index=candidate_go,columns=['Gene number','Accuracy','AUC_ROC','AUC_PR'])
 
     return logistic_df,randomforest_df
 
@@ -86,7 +94,7 @@ def main() :
         f.close() 
         
     description = convert_go_into_descrption(candidate_go,go2namespace,graph_dict)
-    '''
+    
     title = []
     for idx in range(logistic_df.shape[0]) :
         des = description[idx] + ' (n=%d)' % logistic_df['Gene number'][idx]
@@ -94,7 +102,7 @@ def main() :
         
     logistic_df['Description'] = title
     randomforest_df['Description'] = title
-    '''
+    
     logistic_df.to_csv(args.output_path + 'logistic_performance.txt',sep='\t')
     randomforest_df.to_csv(args.output_path + 'randomforest_performance.txt',sep='\t')
     

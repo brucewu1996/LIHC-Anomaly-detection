@@ -3,10 +3,10 @@ import pandas as pd
 import networkx as nx
 import multiprocessing as mp
 from scipy import sparse
-from itertools import repeat,combinations
+from itertools import repeat
 import time
 import json
-import os,re
+import re
 import argparse
 import pickle
 
@@ -212,7 +212,7 @@ def create_go2gene_dict(gene2go_matrix,go_list,biomart) :
             go2gene_dict[g] = genes
         else :
             missing += 1
-        if n % 10 == 0 :
+        if n % 200 == 0 :
             print(n)
     return go2gene_dict
 
@@ -287,7 +287,7 @@ def main() :
     s = time.time()
     for i in range(n) :
         edge_fisher_pv[i] = edge_fisher_exact_test(gene2go_matrix_pass_gene,corr_csc,i)
-        if i % 1000 == 0 :
+        if i % 500 == 0 :
             print('Number of %d GO fisher exact test is processed !' % i)
     e = time.time()
     delta = e -s

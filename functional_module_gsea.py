@@ -39,7 +39,7 @@ def main() :
     parser.add_argument("-e","--exp_profile",help='path of expression profile')
     parser.add_argument("-o","--output_path",type=str,help = 'path of ensemble model output')
     parser.add_argument("-p","--prefix",help = 'prefix of figure')
-    parser.add_argument("-w","--weight",type=bool,help = 'GSEA with vote only gene or Not')
+    parser.add_argument("-w","--weight",type=str,help='GSEA with vote only gene or Not')
     args = parser.parse_args()  
     
     ### load GSEA go to gene dictionary
@@ -53,15 +53,20 @@ def main() :
     print("GSEA analysis by vote of functional module is processing !!")
     vote = pd.read_csv(args.vote,sep='\t',index_col=0)
     vote_start = time.time()
-    if args.weight :
+    if args.weight == "True" :
+        vote_ranking = list(vote.sort_values(by='Vote',ascending=False).index)
         vote_weight = np.where(vote.sort_values(by='Vote',ascending=False)['Vote'].values > 0 ,1,0)  # type: ignore
-        vote_tsea = gene_set_enrichment(go_genedict,vote_weight)
+        print("Number of voted gene : %d" % sum(vote_weight))
+        vote_tsea = gene_set_enrichment(go_genedict,vote_ranking)
         vote_tsea.gsea_with_weight(vote_weight)
     else :
         vote_ranking = list(vote.sort_values(by='Vote',ascending=False).index)
         vote_tsea = gene_set_enrichment(go_genedict,vote_ranking)
-    df = vote_tsea.validate_component()
+        vote_tsea.gsea()
+    print(sum(vote_tsea.pesudo_f))
+    df = vote_tsea.validate_component(pesudo_f_threshold=0.3)
     pass_vote_go = list(df.index)
+    print("Number of GO pass vote-driven GSEA analysis : %d" % len(pass_vote_go))
     pass_vote_go_gene_dict = dict()
     for go in pass_vote_go :
         pass_vote_go_gene_dict[go] = go_genedict[go]
@@ -76,6 +81,7 @@ def main() :
     foldchange_gsea_activated = gene_set_enrichment_analysis(pass_vote_go_gene_dict,fc_ranking)
     foldchange_gsea_activated.gsea()
     validated_df = foldchange_gsea_activated.validate_component()
+    print("Number of GO pass fold-change-driven GSEA analysis (activated) : %d" % validated_df.shape[0])
     validated_df.to_csv(args.output_path + args.prefix + "_activated_functional_module.txt",sep='\t')
     fc_activated_end = time.time()
     print("Execution time of GSEA analysis of activated functional module is : %0.2f seconds" % (fc_activated_end - fc_activated_start))
@@ -86,6 +92,7 @@ def main() :
     foldchange_gsea_inactivated = gene_set_enrichment_analysis(pass_vote_go_gene_dict,fc_ranking)
     foldchange_gsea_inactivated.gsea()
     validated_df = foldchange_gsea_inactivated.validate_component()
+    print("Number of GO pass fold-change-driven GSEA analysis (activated) : %d" % validated_df.shape[0])
     validated_df.to_csv(args.output_path + args.prefix + "_inactivated_functional_module.txt",sep='\t')
     fc_inactivated_end = time.time()
     print("Execution time of GSEA analysis of activated functional module is : %0.2f seconds" % (fc_inactivated_end - fc_inactivated_start))
