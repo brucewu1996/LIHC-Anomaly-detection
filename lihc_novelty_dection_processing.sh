@@ -5,15 +5,17 @@ comment
 
 lihc_path="/home/bruce1996/data/LIHC_anomaly_detection"
 prefix_list='tumor_only normal_only hbv_only nonhbv_only' 
-#first step is data augmentation
+condition="std_by_gene"
+hallmark="${lihc_path}/data/hallmark_gene/hallmark_protein_coding_ens_id_without_outlier.txt"
 <<comment
+#first step is data augmentation
 for prefix in $prefix_list
 do
-	python data_augmentation.py -i "${lihc_path}/lihc_coding_gene_std_by_sample_${prefix}.txt" \
-		-r "/home/bruce1996/data/LIHC_anomaly_detection/data/hallmark_gene/hallmark_protein_coding_ens_id.txt" \
-		-f "/home/bruce1996/data/LIHC_anomaly_detection/fig/data_augmentation/${prefix}_std_by_sample_" \
-		-o "/home/bruce1996/data/LIHC_anomaly_detection/ensemble_training/${prefix}_coding_gene_std_by_sample_with_synthetic.txt" \
-		-n 198
+	python data_augmentation.py -i "${lihc_path}/data/exp_profile/lihc_coding_gene_std_by_gene_${prefix}.txt" \
+		-r $hallmark \
+		-f "/home/bruce1996/data/LIHC_anomaly_detection/fig/data_augmentation/${prefix}_${condition}_" \
+		-o "/home/bruce1996/data/LIHC_anomaly_detection/ensemble_training/${prefix}_coding_gene_${condition}_with_synthetic.txt" \
+		-n 176
 done
 echo 'data augmentation stage is completed !!' >> log.txt
 
@@ -21,10 +23,10 @@ echo 'data augmentation stage is completed !!' >> log.txt
 for prefix in $prefix_list
 do
 	echo "Ensemble learning for $prefix section"
-	python ensemble_learning.py -e "${lihc_path}/data/exp_profile/lihc_coding_gene_std_by_sample_${prefix}.txt" \
-			-c "${lihc_path}/data/hallmark_gene/hallmark_protein_coding_ens_id.txt" \
+	python ensemble_learning.py -e "${lihc_path}/ensemble_training/${prefix}_coding_gene_${condition}_with_synthetic.txt" \
+			-c $hallmark \
 			-r 1000 -t 64 \
-			-o "${lihc_path}/ensemble_result/${prefix}_std_by_sample/" \
+			-o "${lihc_path}/ensemble_result/${prefix}_${condition}_without_outlier/" \
 			-p $prefix --stand False
 done
 echo 'Ensemble learning stage is completed !!' >> log.txt
@@ -33,44 +35,45 @@ for prefix in $prefix_list
 do
     echo "prefix is ${prefix}"
 
-    python ensemble_model_performance.py -v "/home/bruce1996/data/LIHC_anomaly_detection/ensemble_result/${prefix}_std_by_sample/" \
-                        -p "${prefix}" \
+    python ensemble_model_performance.py -v "/home/bruce1996/data/LIHC_anomaly_detection/ensemble_result/${prefix}_${condition}_without_outlier/" \
+                        -p $prefix \
                         -o "/home/bruce1996/data/LIHC_anomaly_detection/fig/ensemble_model_performance/" \
-                        -f "${prefix}_std_by_sample_"
+                        -f "${prefix}_${condition}_"
 
-    python candidate_gene_characteristic.py -i "${lihc_path}/data/exp_profile/lihc_coding_gene_std_by_sample_${prefix}.txt" \
-                        -r "${lihc_path}/data/hallmark_gene/hallmark_protein_coding_ens_id.txt" \
-                        -v "/home/bruce1996/data/LIHC_anomaly_detection/ensemble_result/${prefix}_std_by_sample/" \
+    python candidate_gene_characteristic.py -i "${lihc_path}/ensemble_training/${prefix}_coding_gene_${condition}_with_synthetic.txt" \
+                        -r $hallmark \
+                        -v "/home/bruce1996/data/LIHC_anomaly_detection/ensemble_result/${prefix}_${condition}_without_outlier/" \
                         -p "${prefix}" \
-                        -n 25 \
+                        -n 30 \
                         -o "/home/bruce1996/data/LIHC_anomaly_detection/fig/candidate_gene_composition/" \
                         -f "${prefix}_std_by_sample_"
 done
-
+comment
 #Step 3 Fisher exact test
 for prefix in $prefix_list
 do
-    echo "prefix is ${prefix}"
+    echo "Fisher exact test for prefix : ${prefix}"
 
-    python validated_edge_v2.py -i "${lihc_path}/data/exp_profile/lihc_coding_gene_std_by_sample_${prefix}.txt" \
+    python validated_edge_v2.py -i "${lihc_path}/ensemble_training/${prefix}_coding_gene_${condition}_with_synthetic.txt" \
                     -b "/home/bruce1996/data/LIHC_anomaly_detection/data/coding_gene_info/biomart_protein_coding_gene.txt" \
                     -g "/home/bruce1996/data/GO/networkx/" \
-                    -v "${lihc_path}/ensemble_result/vote_result/lihc_ensemble_vote_result_${prefix}_std_by_sample_np_25.txt" \
+                    -v "${lihc_path}/ensemble_result/vote_result/${prefix}_std_by_gene_without_outlier_vote_np_ratio_25.txt" \
                     -c 0.4 -t 32 \
                     -o "${lihc_path}/functional_profiling/fisher_exact_test/" \
-                    -n "${prefix}_std_by_sample"
+                    -n "${prefix}_${condition}_without_outlier"
 
 done
 echo 'Fisher exact test stage is completed !!' >> log.txt
 #Step 4 GSEA
 for prefix in $prefix_list
 do
-    echo "prefix is ${prefix}"
-    python functional_module_gsea.py -g "${lihc_path}/functional_profiling/fisher_exact_test/${prefix}_std_by_sample_validated_go_2_gene_dict.pkl" \
-                                    -v "${lihc_path}/ensemble_result/vote_result/lihc_ensemble_vote_result_${prefix}_std_by_sample_np_25.txt" \
+    echo "Gene enrichment analysis for prefix : ${prefix}"
+    python functional_module_gsea.py -g "${lihc_path}/functional_profiling/fisher_exact_test/${prefix}_${condition}_without_outlier_validated_go_2_gene_dict.pkl" \
+                                    -e "${lihc_path}/ensemble_training/${prefix}_coding_gene_${condition}_with_synthetic.txt" \
+                                    -v "${lihc_path}/ensemble_result/vote_result/${prefix}_std_by_gene_without_outlier_vote_np_ratio_25.txt" \
                                     -d "${lihc_path}/differential_expression/lihc_${prefix}_deseq_result.txt" \
                                     -o "${lihc_path}/functional_profiling/candidate_functional_module/" \
-                                    -p "${prefix}_std_by_sample"
+                                    -p "${prefix}_${condition}_without_outlier" -w True
 done
 echo 'GSEA stage is completed !!' >> log.txt
 
@@ -78,40 +81,38 @@ echo 'GSEA stage is completed !!' >> log.txt
 #Step 5 evaluate model performance 
 for prefix in $prefix_list
 do
-    echo "prefix is ${prefix}"
-
-    python evaluate_functional_module_performance.py -e "/home/bruce1996/data/LIHC_anomaly_detection/data/exp_profile/lihc_protein_coding_gene_std_exp_profile_tumor_only.txt" \
+    echo "Model performance of prefix : ${prefix}"
+    python evaluate_functional_module_performance.py -e "/home/bruce1996/data/LIHC_anomaly_detection/data/exp_profile/LIHC_tumor_coding_gene_fpkm.txt" \
                     -m '/home/bruce1996/data/LIHC_anomaly_detection/data/sample_info/sample_info_df.txt' \
-                    -g "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/candidate_functional_module/${prefix}_std_by_sample_inactivated_functional_module.txt" \
-                    -d "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/fisher_exact_test/${prefix}_std_by_sample_validated_go_2_gene_dict.pkl" \
-                    -o "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/functional_module_evaluation/hbv_prediction_performance_inactivated_${prefix}_"
+                    -g "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/candidate_functional_module/${prefix}_${condition}_without_outlier_inactivated_functional_module.txt" \
+                    -d "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/fisher_exact_test/${prefix}_${condition}_without_outlier_validated_go_2_gene_dict.pkl" \
+                    -o "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/functional_module_evaluation/${condition}_without_outlier/hbv_prediction_performance_inactivated_${prefix}_"
     
-    python evaluate_functional_module_performance.py -e "/home/bruce1996/data/LIHC_anomaly_detection/data/exp_profile/lihc_protein_coding_gene_std_exp_profile_tumor_only.txt" \
+    python evaluate_functional_module_performance.py -e "/home/bruce1996/data/LIHC_anomaly_detection/data/exp_profile/LIHC_tumor_coding_gene_fpkm.txt" \
                     -m '/home/bruce1996/data/LIHC_anomaly_detection/data/sample_info/sample_info_df.txt' \
-                    -g "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/candidate_functional_module/${prefix}_std_by_sample_activated_functional_module.txt" \
-                    -d "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/fisher_exact_test/${prefix}_std_by_sample_validated_go_2_gene_dict.pkl" \
-                    -o "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/functional_module_evaluation/hbv_prediction_performance_activated_${prefix}_"
+                    -g "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/candidate_functional_module/${prefix}_${condition}_without_outlier_activated_functional_module.txt" \
+                    -d "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/fisher_exact_test/${prefix}_${condition}_without_outlier_validated_go_2_gene_dict.pkl" \
+                    -o "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/functional_module_evaluation/${condition}_without_outlier/hbv_prediction_performance_activated_${prefix}_"
 
 done
-comment
 #step 5.1 plot model performance
 for prefix in $prefix_list
 do
-    echo "prefix is ${prefix}"
+    echo "HBV prediction performance for prefix : ${prefix}"
     #activate functional module
-    python candidate_functional_module.py -v "${lihc_path}/ensemble_result/vote_result/lihc_ensemble_vote_result_${prefix}_std_by_sample_np_25.txt" \
-                    -g "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/candidate_functional_module/${prefix}_std_by_sample_activated_functional_module.txt" \
-                    -d "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/fisher_exact_test/${prefix}_std_by_sample_validated_go_2_gene_dict.pkl" \
-                    -l "${lihc_path}/functional_profiling/functional_module_evaluation/hbv_prediction_performance_activated_${prefix}_logistic_performance.txt" \
-                    -r "${lihc_path}/functional_profiling/functional_module_evaluation/hbv_prediction_performance_activated_${prefix}_randomforest_performance.txt" \
+    python candidate_functional_module.py -v -v "${lihc_path}/ensemble_result/vote_result/${prefix}_std_by_gene_without_outlier_vote_np_ratio_25.txt" \
+                    -g "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/candidate_functional_module/${prefix}_${condition}_without_outlier_activated_functional_module.txt" \
+                    -d "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/fisher_exact_test/${prefix}_${condition}_without_outlier_validated_go_2_gene_dict.pkl" \
+                    -l "${lihc_path}/functional_profiling/functional_module_evaluation/${condition}_without_outlier/hbv_prediction_performance_activated_${prefix}_logistic_performance.txt" \
+                    -r "${lihc_path}/functional_profiling/functional_module_evaluation/${condition}_without_outlier/hbv_prediction_performance_activated_${prefix}_randomforest_performance.txt" \
                     -p "activate_${prefix}" \
-                    -o "${lihc_path}/fig/functional_module/hbv_prediction_performance/"
+                    -o "${lihc_path}/fig/functional_module/hbv_prediction_performance/${condition}_without_outlier/"
     #inactivate functional module
-    python candidate_functional_module.py -v "${lihc_path}/ensemble_result/vote_result/lihc_ensemble_vote_result_${prefix}_std_by_sample_np_25.txt" \
-                    -g "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/candidate_functional_module/${prefix}_std_by_sample_inactivated_functional_module.txt" \
-                    -d "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/fisher_exact_test/${prefix}_std_by_sample_validated_go_2_gene_dict.pkl" \
-                    -l "${lihc_path}/functional_profiling/functional_module_evaluation/hbv_prediction_performance_inactivated_${prefix}_logistic_performance.txt" \
-                    -r "${lihc_path}/functional_profiling/functional_module_evaluation/hbv_prediction_performance_inactivated_${prefix}_randomforest_performance.txt" \
+    python candidate_functional_module.py -v "${lihc_path}/ensemble_result/vote_result/${prefix}_std_by_gene_vote_np_ratio_30.txt" \
+                    -g "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/candidate_functional_module/${prefix}_${condition}_inactivated_functional_module.txt" \
+                    -d "/home/bruce1996/data/LIHC_anomaly_detection/functional_profiling/fisher_exact_test/${prefix}_${condition}_validated_go_2_gene_dict.pkl" \
+                    -l "${lihc_path}/functional_profiling/functional_module_evaluation/${condition}_without_outlier/hbv_prediction_performance_inactivated_${prefix}_logistic_performance.txt" \
+                    -r "${lihc_path}/functional_profiling/functional_module_evaluation/${condition}_without_outlier/hbv_prediction_performance_activated_${prefix}_randomforest_performance.txt" \
                     -p "inactivate_${prefix}" \
-                    -o "${lihc_path}/fig/functional_module/hbv_prediction_performance/"
+                    -o "${lihc_path}/fig/functional_module/hbv_prediction_performance/${condition}_without_outlier/"
 done
