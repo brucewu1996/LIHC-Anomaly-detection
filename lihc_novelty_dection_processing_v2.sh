@@ -23,7 +23,7 @@ do
     #second stage is ensemble learning
     echo "Ensemble learning for $prefix section"
     ensemble_result="${lihc_path}/ensemble_result/${project_prefix}/"
-	python ensemble_learning.py -e $exp_profile \
+	  python ensemble_learning.py -e $exp_profile \
 			-c $hallmark \
 			-r 1000 -t 64 \
 			-o $ensemble_result \

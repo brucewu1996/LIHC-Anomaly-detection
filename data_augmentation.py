@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 import seaborn as sns
-import argparse
+import argparse,os
 
 
 def plot_pc_explain_ratio(exp_matrix,output_path,explained_ratio_threshold=0.8) :
@@ -96,19 +96,22 @@ def main() :
     parser.add_argument("-i", "--input",help="path of expression profile")
     parser.add_argument("-r", "--reference",help="ens id for reference gene")
     parser.add_argument("-f","--fig_output",help="figure output path")
+    parser.add_argument("-p","--fig_prefix",help="figure output prefix")
     parser.add_argument("-o","--output",help="Expression matrix with synthetic data output path")
     parser.add_argument("-n","--number",type=int,help="Number of synthetic data")
     args = parser.parse_args()
     
     exp_profile = pd.read_csv(args.input,sep='\t',index_col=0)
-    hallmark = pd.read_csv(args.reference,sep='\t')
+    hallmark = pd.read_csv(args.reference,sep=',')
     hallmark.columns = ["EnsID"]  # type: ignore
     hallmark_gene = hallmark['EnsID'].values
     hallmark_m = exp_profile.loc[hallmark_gene,:]
     
     n_pc = plot_pc_explain_ratio(hallmark_m,args.fig_output + "principle_component_explained_ratio.png")
     synthetic_X = centroid_base_data_augmentation(hallmark_m,n_pc,args.number)
-    data_augmentatation_pca_scatterplot(hallmark_m,synthetic_X,args.fig_output + "data_augmentation_pcaplot.png")
+    if os.path.exists(args.fig_output) == False :
+        os.mkdir(args.fig_output)
+    data_augmentatation_pca_scatterplot(hallmark_m,synthetic_X,args.fig_output + args.fig_prefix + "_data_augmentation_pcaplot.png")
     synthetic_df = pd.DataFrame(synthetic_X,index=["Synthetic_" + str(x) for x in range(args.number)],columns=exp_profile.columns)
     pd.concat([exp_profile,synthetic_df],axis=0).to_csv(args.output,sep='\t')
     

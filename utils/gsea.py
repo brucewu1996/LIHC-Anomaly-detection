@@ -42,11 +42,13 @@ def permutation(taxa_array,n_times = 1000) :
         np.random.shuffle(taxa_array)
         permutation_es[i] = enrich_score(taxa_array)
     es_above_origin = sum(permutation_es > origin_es)
+    es_median = np.median(permutation_es)
+    es_std = np.std(permutation_es)
     if es_above_origin == 0 :
-        pesudo_f = 1/ (n_times * 10)
+        pesudo_f = 0
     else :
         pesudo_f = es_above_origin / n_times
-    return pesudo_f,origin_es
+    return pesudo_f,origin_es,es_median,es_std
 
 def matrix_2_corr_sparse_matrix(matrix,threshold=0.4,method='spearman') :
     '''
@@ -80,6 +82,8 @@ class gene_set_enrichment_analysis :
         self.ranking = ranking
         self.permutation = permutaion
         self.es_score = np.zeros(len(cluster_component))
+        self.es_score_median = np.zeros(len(cluster_component))
+        self.es_score_std = np.zeros(len(cluster_component))
         self.pesudo_f = np.zeros(len(cluster_component))
         
     def gsea(self) :
@@ -91,7 +95,7 @@ class gene_set_enrichment_analysis :
                 if r in target :
                     es_array[r_idx] = 1
             if sum(es_array) > 0 :
-                self.pesudo_f[idx],self.es_score[idx] = permutation(es_array,n_times=self.permutation)
+                self.pesudo_f[idx],self.es_score[idx],self.es_score_median[idx],self.es_score_std[idx] = permutation(es_array,n_times=self.permutation)
             else :
                 self.pesudo_f[idx],self.es_score[idx] = (1,0)
             
@@ -101,7 +105,10 @@ class gene_set_enrichment_analysis :
     def validate_component(self,pesudo_f_threshold=0.05) :
         
         component_list = list(self.cluster_component.keys())
-        df = pd.DataFrame({'Pesudo-F' : self.pesudo_f},index = component_list)
+        df = pd.DataFrame({'Pesudo-F' : self.pesudo_f,'Origin_ES' : self.es_score,
+                           'ES_median' : self.es_score_median,'ES_std' : self.es_score_std,
+                           '#Nodes' : [len(self.cluster_component[x]) for x in component_list]},
+                           index = component_list)
         idx = np.where(df['Pesudo-F'] < pesudo_f_threshold,True,False)
         validated_df = df.loc[idx,:].sort_values(by='Pesudo-F')
         return validated_df
