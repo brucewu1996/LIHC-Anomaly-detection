@@ -55,7 +55,7 @@ def create_gene2go_matrix(biomart,exp_profile,graph_dict,threads) :
             except :
                 continue
             try :
-                anc = nx.descendants(G,go)
+                anc = nx.descendants(G,go)  # type igonore
             except :
                 continue
             try :
@@ -245,7 +245,7 @@ def main() :
             f.close()
     with open("/home/bruce1996/data/GO/go2namespace.json",'rb') as f :
         go2namespace = json.load(f)
-        f.close()
+    f.close()
     # remove go information by biomart evidence code
     experiment_evidence_code = ['EXP','IDA','IPI','IMP','IGI','IEP','HTP','HDA','HMP','HGI','HEP']
     idx = [x in experiment_evidence_code for x in biomart['GO term evidence code']]

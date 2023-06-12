@@ -86,7 +86,7 @@ class svm_ensemble_learning() :
         pool.close()
         pool.join()
         #merge parallel result
-        metric_array = np.stack(result,axis = 0)
+        metric_array = np.stack(result,axis = 0) # type: ignore
         
         return metric_array
 
