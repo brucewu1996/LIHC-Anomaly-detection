@@ -1,6 +1,5 @@
 import numpy as np
-import pandas as pd
-import argparse,re,os
+import argparse,os
 import matplotlib.pyplot as plt
 from utils.ensemble_based import ensemble_result
 
@@ -50,24 +49,17 @@ def main() :
     parser.add_argument("-p", "--prefix",help="prefix of vote result")
     parser.add_argument("-o","--output_path",type=str,help = 'path of ensemble model output')
     parser.add_argument("-f","--figure_prefix",help = 'prefix of figure')
-    #parser.add_argument("-n", "--np_ratio",type=int,help="NP ratio")
-    #parser.add_argument("--vote_output",help = 'prefix of figure')
+    parser.add_argument("-t","--title",type=str,default="Median performance of single SVM in ensemble learning model" )
     args = parser.parse_args()  
-    '''
-    ### output specific N/P ratio vote result 
-    vote = ensemble_result(result_path,result_prefix,threshold=0,ratio=args.np_ratio,binary_flag=False)
-    gene_idx = [bool(re.search("Synthetic",x)) == False for x in exp_profile.index]
-    df = pd.DataFrame({"Gene" : list(exp_profile.index[gene_idx]),'Vote' : vote[gene_idx]})
-    df.to_csv(args.vote_output + args.prefix + str(args.np_ratio)+ "lihc_ensemble_learning_gene_vote.txt",sep='\t',index=None)  # type: ignore
-    '''
+
     ### plot
     result_path = args.vote
     result_prefix = args.prefix
+    title = args.title
     
     if os.path.exists(args.output_path) == False :
         os.mkdir(args.output_path)
         
-    title = "Median performance of single SVM in ensemble learning model without synthetic data" 
     metric_performance(result_path ,result_prefix,'recall',title,args.output_path + args.figure_prefix + 'ensemble_model_median_recall.png',hallmark=True)
     metric_performance(result_path ,result_prefix,'precision',title,args.output_path + args.figure_prefix + 'ensemble_model_median_precision.png',hallmark=True)
     

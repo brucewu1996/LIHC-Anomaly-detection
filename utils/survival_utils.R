@@ -3,6 +3,7 @@ library(survminer)
 
 survival_analysis<-function(survival_info,fig_prefix){
   
+  print(survival_info)
   survival_input = read.table(survival_info,header = T,row.names = 1,sep = '\t')
   # change status info from str into boolean
   survival_input$Status = survival_input$Status == 'True'
@@ -15,13 +16,16 @@ survival_analysis<-function(survival_info,fig_prefix){
   model <- coxph( fmla,data = survival_input[c(genes,"Survival_day","Status")] )
   risk_score = predict(model, survival_input, type="risk")
   survival_input$risk = risk_score > 1
+  survival_v2 = data.frame(survival_input)
   # final cox regression
-  model <- coxph(total_fmla,data = survival_input)
-  forest_plot = ggforest(model,main = fig_prefix)
+  model_v2 <- coxph(total_fmla,data = survival_v2)
+  forest_plot = ggforest(model_v2,main=fig_prefix,data=survival_v2)
   ## km plot
-  fmla = as.formula("Surv(Survival_day, Status) ~ risk")
-  fit <- do.call(survfit, args = list(formula = fmla, data = survival_input))
-  kmplot = ggsurvplot(fit, data = survival_input,pval = TRUE,
+  km_fmla = as.formula("Surv(Survival_day, Status) ~ risk")
+  #fit <- do.call(surfit, args = list(formula = fmla, data = survival_input))
+  km_survival = data.frame(survival_v2)
+  fit = survminer::surv_fit(formula = km_fmla,data = km_survival)
+  kmplot = ggsurvplot(fit, data = km_survival,pval = TRUE,
                       conf.int = TRUE,
                       legend.title = "Risk",
                       legend.labs = c("Low risk", "High risk"),
