@@ -1,0 +1,38 @@
+	patient	Advance_celltype	sample	virus
+0	HCC01	non-malignant hepatocyte	8	HBV
+1	HCC01	pro-metastatic hepatocyte	33	HBV
+2	HCC01	pro-tumorigenic hepatocyte	30	HBV
+3	HCC02	cholangiocyte 	3	HBV
+4	HCC02	non-malignant hepatocyte	77	HBV
+5	HCC02	pro-metastatic hepatocyte	196	HBV
+6	HCC02	pro-tumorigenic hepatocyte	1881	HBV
+7	HCC03	cholangiocyte 	4	HCV
+8	HCC03	non-malignant hepatocyte	66	HCV
+9	HCC03	pro-metastatic hepatocyte	1403	HCV
+10	HCC03	pro-tumorigenic hepatocyte	2001	HCV
+11	HCC04	non-malignant hepatocyte	58	HCV
+12	HCC04	pro-metastatic hepatocyte	1820	HCV
+13	HCC04	pro-tumorigenic hepatocyte	576	HCV
+14	HCC05	cholangiocyte 	32	None
+15	HCC05	non-malignant hepatocyte	73	None
+16	HCC05	pro-metastatic hepatocyte	65	None
+17	HCC05	pro-tumorigenic hepatocyte	1056	None
+18	HCC06	cholangiocyte 	5	HBV
+19	HCC06	non-malignant hepatocyte	48	HBV
+20	HCC06	pro-metastatic hepatocyte	88	HBV
+21	HCC06	pro-tumorigenic hepatocyte	98	HBV
+22	HCC07	cholangiocyte 	4	None
+23	HCC07	non-malignant hepatocyte	9	None
+24	HCC07	pro-metastatic hepatocyte	42	None
+25	HCC07	pro-tumorigenic hepatocyte	30	None
+26	HCC08	cholangiocyte 	2	None
+27	HCC08	non-malignant hepatocyte	69	None
+28	HCC08	pro-metastatic hepatocyte	1559	None
+29	HCC08	pro-tumorigenic hepatocyte	212	None
+30	HCC09	non-malignant hepatocyte	28	HBV
+31	HCC09	pro-metastatic hepatocyte	1184	HBV
+32	HCC09	pro-tumorigenic hepatocyte	277	HBV
+33	HCC10	cholangiocyte 	1	HBV
+34	HCC10	non-malignant hepatocyte	24	HBV
+35	HCC10	pro-metastatic hepatocyte	925	HBV
+36	HCC10	pro-tumorigenic hepatocyte	215	HBV
