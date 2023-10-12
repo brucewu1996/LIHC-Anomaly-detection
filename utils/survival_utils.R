@@ -1,9 +1,8 @@
 library(survival)
 library(survminer)
 
-survival_analysis<-function(survival_info,fig_prefix){
+survival_analysis<-function(survival_info,fig_prefix,km_col='risk',km_labels=c("Low risk", "High risk")){
   
-  print(survival_info)
   survival_input = read.table(survival_info,header = T,row.names = 1,sep = '\t')
   # change status info from str into boolean
   survival_input$Status = survival_input$Status == 'True'
@@ -21,19 +20,20 @@ survival_analysis<-function(survival_info,fig_prefix){
   model_v2 <- coxph(total_fmla,data = survival_v2)
   forest_plot = ggforest(model_v2,main=fig_prefix,data=survival_v2)
   ## km plot
-  km_fmla = as.formula("Surv(Survival_day, Status) ~ risk")
+  km_fmla = as.formula(paste0("Surv(Survival_day, Status) ~ ",km_col))
   #fit <- do.call(surfit, args = list(formula = fmla, data = survival_input))
   km_survival = data.frame(survival_v2)
   fit = survminer::surv_fit(formula = km_fmla,data = km_survival)
+  logrank_pv = surv_pvalue(fit)
   kmplot = ggsurvplot(fit, data = km_survival,pval = TRUE,
-                      conf.int = TRUE,
-                      legend.title = "Risk",
-                      legend.labs = c("Low risk", "High risk"),
+                      conf.int = TRUE,method = 'survdiff',
+                      legend.title = str_to_title(km_col),
+                      legend.labs = km_labels,
                       # Add risk table
                       risk.table = TRUE,
                       tables.height = 0.2,
                       palette = c("#98EECC", "#FEA1A1")) + ggtitle(fig_prefix)
-  return(list(forest_plot,kmplot,summary(model)))
+  return(list(forest_plot,kmplot,summary(model),logrank_pv))
 }
 
 
