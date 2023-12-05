@@ -1,40 +1,43 @@
 library(stringr)
 
-survival_input_path = "/home/bruce1996/data/LIHC_anomaly_detection/survival_analysis/tcga_lihc_survival_input/"
-survival_fig_output_path = "/home/bruce1996/data/LIHC_anomaly_detection/survival_analysis/tcga_lihc_survival_figure/"
-survival_cox_output_path = "/home/bruce1996/data/LIHC_anomaly_detection/survival_analysis/tcga_lihc_survival_cox_summary/"
-condition_l = c()
-ppi_l = c()
-module_l = c()
-pv_l = c()
-
-for (condition in c('HBV','non-HBV')){
-  for (ppi in c('GRN','PIN')){
-    survival_path = paste0(survival_input_path,condition,'/',ppi,'/')
-    file_list = list.files(survival_path)
-    output_path = paste0(survival_fig_output_path,condition,'/',ppi,'/')
-    for (file in file_list) {
-      prefix = substr(file,1,nchar(file)-4)
-      condition_l = append(condition_l,condition)
-      ppi_l = append(ppi_l,ppi)
-      module_l = append(module_l,prefix)
-      res = survival_analysis(paste0(survival_path,file),prefix)
-      forest_plot = res[1][[1]]
-      logrank_pv = res[3][[1]]$logtest[[3]]
-      print(logrank_pv)
-      pv_l = append(pv_l,logrank_pv)
-      km_plot = ggsave_workaround(res[2][[1]])
-      model_summary = res[3][[1]]
-      write.table(model_summary$coefficients,file = paste0(survival_cox_output_path,condition,'/',ppi,'/',prefix,"_cox_summary.txt"),sep = '\t',quote = F)
-      if (dim(model_summary$coefficients)[1] > 20){
-        ggsave(filename = paste0(output_path,prefix,"_forest_plot.png"), plot = forest_plot,width = 8, height = 12, dpi = 300)
-      }else{
-        ggsave(filename = paste0(output_path,prefix,"_forest_plot.png"), plot = forest_plot,width = 8, height = 6, dpi = 300) 
-      }
-      ggsave(filename = paste0(output_path,prefix,"_hbv_km_plot.png"), plot = km_plot,width = 8, height = 6, dpi = 300)
-      
-      df = data.frame(module_l,pv_l,ppi_l,condition_l)
-      colnames(df) = c("Module",'pvalue','PPI','HBV')
+input_path = "/mnt/sdb/bruce/LIHC_anomaly_detection/survival_analysis/tcga_lihc_survival_exp_matrix/zscore/"
+fig_output_path = str_replace(input_path,'survival_exp_matrix','survival_figure')
+cox_output_path = str_replace(input_path,'survival_exp_matrix','survival_cox_summary')
+for (condition in c("HBV","non-HBV")){
+  for (folder in c("GRN","PIN")){
+    survival_path = paste0(input_path,condition,'/',folder,'/')
+    survival_fig_output_path = paste0(fig_output_path,condition,'/',folder,'_without_stage/')
+    survival_cox_output_path = paste0(cox_output_path,condition,'/',folder,'_without_stage/')
+    # if output folder no exist, create folder
+    if (dir.exists(survival_fig_output_path) == FALSE){
+      dir.create(survival_fig_output_path)
+    }
+    if (dir.exists(survival_cox_output_path) == FALSE){
+      dir.create(survival_cox_output_path)
+    }
+    for (module in list.files(survival_path)){
+      print(paste0("survival analysis for module :",survival_path,module))
+      survival_input = read.table(paste0(survival_path,module),header = T,row.names = 1,sep = '\t')
+      gene_list = colnames(survival_input)[8:dim(survival_input)[2]]
+      confounding_factor = c("Age")
+      clinical_info = survival_input[,c("Survival_day","Status","Gender","Age","Stage")]
+      exp_m = survival_input[,gene_list]
+      prefix = substr(module,1,nchar(module)-4)
+      try({
+        res = survival_analysis_v2(clinical_info,exp_m,strsplit(prefix,'_')[[1]][2],
+                                   confounding_factor = confounding_factor,risk_score_mode = FALSE)
+        forest_plot = res[1][[1]]
+        km_plot = ggsave_workaround(res[2][[1]])
+        model_summary = round(res[3][[1]]$coefficients,4)
+        
+        write.table(model_summary,file = paste0(survival_cox_output_path,prefix,"_cox_summary.txt"),sep = '\t',quote = F)
+        if (dim(model_summary)[1] > 20){
+          ggsave(filename = paste0(survival_fig_output_path,prefix,"_forest_plot.png"), plot = forest_plot,width = 10, height = 12, dpi = 300)
+        }else{
+          ggsave(filename = paste0(survival_fig_output_path,prefix,"_forest_plot.png"), plot = forest_plot,width = 10, height = 6, dpi = 300) 
+        }
+        ggsave(filename = paste0(survival_fig_output_path,prefix,"_hbv_km_plot.png"), plot = km_plot,width = 8, height = 6, dpi = 300)
+      })# tryCatch
     }
   }
 }
