@@ -85,14 +85,13 @@ def main() :
     del scRNA_exp_m
     ### load vote information
     vote = pd.read_csv("/home/bruce1996/data/LIHC_anomaly_detection/manuscript/material/ensemble_learning_result/ensemble_hbv_only_np_ratio_35_vote_result.txt",sep='\t',index_col=0)
-    voted_gene = list(set(vote.index[vote['Vote'] > 0]).intersection(exp_m.index))
+    voted_gene = list(set(vote.index[vote['Vote'] > 200]).intersection(exp_m.index))
     non_voted_gene = list(set(set(vote.index) - set(voted_gene)).intersection(exp_m.index))
     ### load hvg information
-    seurat_hvg = pd.read_csv("/home/bruce1996/data/LIHC_anomaly_detection/manuscript/material/scRNA_seurat/seurat_hvg.txt",sep='\t',index_col=0)
-    candidate_gene = list(set(seurat_hvg['EnsID'][np.where(seurat_hvg['EnsID'] != 'Non-coding',True,False)]).intersection(exp_m.index))
-    non_candidate_gene = list(set(set(vote.index) - set(voted_gene)).intersection(exp_m.index))
+    seurat_hvg = pd.read_csv("/home/bruce1996/data/LIHC_anomaly_detection/manuscript/material/scRNA_seurat/seurat_hvgs152_list.txt",sep='\t',index_col=0)
+    seurat_candidate_gene = list(set(seurat_hvg['EnsID'][np.where(seurat_hvg['EnsID'] != 'Non-coding',True,False)]).intersection(exp_m.index))
 
-    for condition in ['virus'] :
+    for condition in ['virus','patient'] :
         stage_d = metadata_coverter(metadata[condition])
         y_true = metadata.loc[exp_m.columns,condition].replace(stage_d).values
         ### calculate random sample clustering result
@@ -101,7 +100,7 @@ def main() :
 
         for idx in range(n_iteration) :
             print('%d st iteration for random sampling UMAP clustering' % (idx+1))
-            candidate = random.sample(non_candidate_gene,len(candidate_gene))
+            candidate = random.sample(non_voted_gene,len(voted_gene))
             input = exp_m.loc[candidate,:]
             try :
                 measurement = calculate_umap_clustering_result(input.T,y_true)
@@ -109,21 +108,14 @@ def main() :
                 metric_df.iloc[idx,1] = measurement['NMI']
             except :
                 pass
-            '''
-            leiden_measurement = calculate_scanpy_leiden_clustering_result(input.T,metadata,condition)
-            leiden_df.iloc[idx,0] = leiden_measurement['ARI'] 
-            leiden_df.iloc[idx,1] = leiden_measurement['NMI']
-            '''
+
         ### calculate voted gene clustering result
         measurement = calculate_umap_clustering_result(exp_m.loc[voted_gene,:].T,y_true)
         metric_df = metric_df.append(measurement,ignore_index=True)
-        '''
-        leiden_measurement = calculate_scanpy_leiden_clustering_result(exp_m.loc[voted_gene,:].T,metadata,condition)
-        leiden_df = leiden_df.append(leiden_measurement,ignore_index=True)
-        '''
-
-        metric_df.to_csv("/home/bruce1996/data/LIHC_anomaly_detection/manuscript/material/scRNA_measurement/%s_seurat_hvg_random_sampling_cluster_result.txt" % condition,sep='\t')
-        #leiden_df.to_csv("/home/bruce1996/data/LIHC_anomaly_detection/manuscript/material/scRNA_measurement/%s_random_sampling_leiden_cluster_result.txt" % condition,sep='\t')
+        measurement = calculate_umap_clustering_result(exp_m.loc[seurat_candidate_gene,:].T,y_true)
+        metric_df = metric_df.append(measurement,ignore_index=True)
+        metric_df.index = [x for x in range(n_iteration)] + ['Voted genes','Seurat HVGs']
+        metric_df.to_csv("/home/bruce1996/data/LIHC_anomaly_detection/manuscript/material/scRNA_measurement/%s_highly_voted_genes_random_sampling_cluster_result.txt" % condition,sep='\t')
 
 if __name__ == '__main__' :
     main()

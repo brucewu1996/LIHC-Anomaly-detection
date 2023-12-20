@@ -86,17 +86,18 @@ def model_performance(result_path,prefix,hallmark,gene_idx,metric,output_path,fo
     plt.savefig(output_path + 'ensemble_performance_predict_by_vote_%s_%s.%s' % (metric,prefix,format),bbox_inches = 'tight',dpi=300,format=format)
 
 def main() :
-    vote_path = '/home/bruce1996/data/LIHC_anomaly_detection/ensemble_result/without_synthetic/'
+    vote_path = '/home/bruce1996/data/LIHC_anomaly_detection/ensemble_result/with_synthetic/'
     training_path = '/home/bruce1996/data/LIHC_anomaly_detection/ensemble_training/'
     hallmark = pd.read_csv('/home/bruce1996/data/LIHC_anomaly_detection/data/hallmark_gene/hallmark_protein_coding_ens_id.txt',sep='\t')
     hallmark_genes = hallmark['EnsID'].values
-    output_path = "/home/bruce1996/data/LIHC_anomaly_detection/manuscript/Fig1_identify_hallmark_gene/"
+    #output_path = "/home/bruce1996/data/LIHC_anomaly_detection/manuscript/Fig1_identify_hallmark_gene/"
+    output_path = "/home/bruce1996/repo/LIHC_anomaly_detection/tmp/"
     ##
-    prefix_list = ['hbv_only','tumor_only']
+    prefix_list = ['hbv_only']
     for prefix in prefix_list :
-        exp_m = pd.read_csv(training_path + "lihc_coding_gene_std_by_gene_%s.txt" % prefix,sep='\t',index_col=0)
+        #exp_m = pd.read_csv(training_path + "lihc_coding_gene_std_by_gene_%s.txt" % prefix,sep='\t',index_col=0)
+        exp_m = pd.read_csv(training_path + "%s_coding_gene_std_by_gene_with_synthetic.txt" % prefix,sep='\t',index_col=0)
         model_performance(vote_path,prefix,hallmark_genes,exp_m.index,'Precision',output_path,format='svg')
-
 
 if __name__ == '__main__' :
     main()
