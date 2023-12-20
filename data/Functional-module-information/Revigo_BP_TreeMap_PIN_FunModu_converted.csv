@@ -1,0 +1,10 @@
+Name	Value	Representative
+T cell proliferation	25.0	null
+T cell mediated immunity	16.0	T cell proliferation
+antigen processing and presentation of endogenous peptide antigen via MHC class I	6.0	T cell proliferation
+cellular response to cytokine stimulus	66.0	null
+regulation of leukocyte cell-cell adhesion	32.0	null
+positive regulation of leukocyte chemotaxis	17.0	regulation of leukocyte cell-cell adhesion
+regulation of adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains	16.0	regulation of leukocyte cell-cell adhesion
+regulation of lymphocyte proliferation	29.0	regulation of leukocyte cell-cell adhesion
+positive regulation of leukocyte differentiation	17.0	regulation of leukocyte cell-cell adhesion

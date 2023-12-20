@@ -1,0 +1,4 @@
+TermID,Name,Frequency,Value,Uniqueness,Dispensability,Representative
+GO:0045824,negative regulation of innate immune response,0.013008693,22,1,0,null
+GO:0071345,cellular response to cytokine stimulus,0.188950348,66,0.438640092,0,null
+GO:0071346,cellular response to type II interferon,0.010913199,15,0.438640092,0.67540181,cellular response to cytokine stimulus

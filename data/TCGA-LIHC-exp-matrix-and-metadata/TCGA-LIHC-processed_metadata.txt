@@ -1,0 +1,378 @@
+patient_id	patient_id	age_at_diagnosis	gender	vital_status	Survival_days	HBV	viral_hepatitis_serology	history_hepato_carcinoma_risk_factors	tumor_grade	ajcc_tumor_pathologic_pt	ajcc_nodes_pathologic_pn	ajcc_metastasis_pathologic_pm	ajcc_pathologic_tumor_stage	new_tumor_event_dx_indicator	death_days_to	last_contact_days_to	viral_hepatitis_serology_HBV Surface Antibody	viral_hepatitis_serology_HBV DNA	viral_hepatitis_serology_Hepatitis C Virus RNA	viral_hepatitis_serology_Hepatitis B Surface Antigen	viral_hepatitis_serology_HBV Core Antibody	viral_hepatitis_serology_Hepatitis  C Antibody	viral_hepatitis_serology_HCV Genotype	history_hepato_carcinoma_risk_factors_Alcohol consumption	history_hepato_carcinoma_risk_factors_No History of Primary Risk Factors	history_hepato_carcinoma_risk_factors_Non-Alcoholic Fatty Liver Disease	history_hepato_carcinoma_risk_factors_Hepatitis C	history_hepato_carcinoma_risk_factors_Hepatitis B
+A95S	A95S	[Not Available]	MALE	Alive	[Not Available]	Negative	[Unknown]	Other	G3	T2	NX	MX	Stage II	[Unknown]	[Not Applicable]	[Not Available]	0	0	0	0	0	0	0	0	0	0	0	0
+A9GS	A9GS	58	MALE	Dead	724	Positive	HCV Genotype|Hepatitis B Surface Antigen|HBV Core Antibody	Alcohol consumption	G2	T2	NX	MX	[Not Available]	YES	724	[Not Available]	0	0	0	1	1	0	1	1	0	0	0	0
+A9GT	A9GT	51	MALE	Dead	1624	Positive	Hepatitis C Virus RNA|Hepatitis B Surface Antigen|HBV Core Antibody|HBV DNA	Alcohol consumption|Hepatitis B|Hepatitis C	G2	T1	NX	MX	Stage I	YES	1624	[Not Available]	0	1	1	1	1	0	0	1	0	0	1	1
+A9GU	A9GU	55	FEMALE	Alive	1569	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Core Antibody	No History of Primary Risk Factors	G2	T1	NX	MX	Stage I	NO	[Not Applicable]	1569	0	0	0	1	1	1	0	0	1	0	0	0
+A9GV	A9GV	54	FEMALE	Dead	2532	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Core Antibody	Alcohol consumption	G1	T1	NX	MX	Stage I	YES	2532	[Not Available]	0	0	0	1	1	1	0	1	0	0	0	0
+A9GW	A9GW	64	MALE	Dead	1271	Negative	[Unknown]	Alcohol consumption	G2	T1	N0	MX	Stage I	YES	1271	[Not Available]	0	0	0	0	0	0	0	1	0	0	0	0
+A9GX	A9GX	68	MALE	Alive	2442	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Alcohol consumption	G2	T1	NX	MX	Stage I	YES	[Not Applicable]	2442	1	0	0	1	1	0	0	1	0	0	0	0
+A9GY	A9GY	64	FEMALE	Dead	757	Negative	[Unknown]	No History of Primary Risk Factors	G3	T2	NX	MX	Stage II	YES	757	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A9GZ	A9GZ	82	FEMALE	Dead	848	Negative	Hepatitis  C Antibody|HBV Core Antibody	No History of Primary Risk Factors	G2	T2	NX	MX	Stage II	YES	848	[Not Available]	0	0	0	0	1	1	0	0	1	0	0	0
+A9H0	A9H0	49	MALE	Alive	3675	Negative	[Unknown]	Alcohol consumption|Hepatitis B|Hepatitis C	G1	T3	N0	M0	Stage III	NO	[Not Applicable]	3675	0	0	0	0	0	0	0	1	0	0	1	1
+A9H1	A9H1	58	MALE	Dead	1229	Negative	Hepatitis  C Antibody	Alcohol consumption|Hepatitis C	G2	T1	NX	MX	Stage I	YES	1229	[Not Available]	0	0	0	0	0	1	0	1	0	0	1	0
+A9H2	A9H2	64	FEMALE	Alive	1582	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Core Antibody	Alcohol consumption	G3	T1	N0	MX	Stage I	NO	[Not Applicable]	1582	0	0	0	1	1	1	0	1	0	0	0	0
+A9H3	A9H3	45	MALE	Alive	1257	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Alcohol consumption|Non-Alcoholic Fatty Liver Disease	G1	T2	NX	MX	Stage II	YES	[Not Applicable]	1257	1	0	0	1	1	1	0	1	0	1	0	0
+A9H4	A9H4	68	MALE	Alive	1270	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Alcohol consumption|Hepatitis B	G2	T1	N0	MX	Stage I	NO	[Not Applicable]	1270	1	0	0	1	1	1	0	1	0	0	0	1
+A9H5	A9H5	59	FEMALE	Dead	555	Negative	Hepatitis  C Antibody|Hepatitis C Virus RNA|HCV Genotype	Alcohol consumption|Hepatitis C	G3	T1	N0	MX	Stage I	YES	555	[Not Available]	0	0	1	0	0	1	1	1	0	0	1	0
+A9H6	A9H6	68	FEMALE	Alive	357	Negative	[Unknown]	Alcohol consumption	G2	T1	NX	MX	Stage I	NO	[Not Applicable]	357	0	0	0	0	0	0	0	1	0	0	0	0
+A9H7	A9H7	81	FEMALE	Alive	1133	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	No History of Primary Risk Factors	G2	T1	N0	MX	Stage I	YES	[Not Applicable]	1133	1	0	0	1	1	1	0	0	1	0	0	0
+A9H8	A9H8	85	FEMALE	Dead	633	Negative	Hepatitis C Virus RNA|HBV Surface Antibody|HBV DNA	Alcohol consumption	G2	T1	NX	MX	[Not Available]	YES	633	[Not Available]	1	1	1	0	0	0	0	1	0	0	0	0
+A9H9	A9H9	70	MALE	Alive	456	Negative	[Unknown]	Alcohol consumption|Hepatitis C	G2	T1	N0	MX	Stage I	YES	[Not Applicable]	456	0	0	0	0	0	0	0	1	0	0	1	0
+A9HA	A9HA	70	MALE	Dead	36	Negative	Hepatitis  C Antibody	Alcohol consumption|Hepatitis C	G2	T2	NX	MX	Stage II	NO	36	[Not Available]	0	0	0	0	0	1	0	1	0	0	1	0
+A9HB	A9HB	66	MALE	Alive	158	Negative	Hepatitis C Virus RNA|HCV Genotype	Alcohol consumption	G2	T1	NX	MX	Stage I	NO	[Not Applicable]	158	0	0	1	0	0	0	1	1	0	0	0	0
+AAZ8	AAZ8	65	MALE	Alive	243	Negative	[Unknown]	Hepatitis C	G1	T3b	NX	MX	Stage III	YES	[Not Applicable]	243	0	0	0	0	0	0	0	0	0	0	1	0
+AA8I	AA8I	66	MALE	Alive	216	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Non-Alcoholic Fatty Liver Disease	G2	T2	NX	MX	Stage II	YES	[Not Applicable]	216	0	0	0	1	0	1	0	0	0	1	0	0
+A9VG	A9VG	58	MALE	Alive	328	Negative	[Not Available]	Other	G2	T2	N0	M0	Stage II	NO	[Not Applicable]	328	0	0	0	0	0	0	0	0	0	0	0	0
+A9VH	A9VH	70	MALE	Alive	322	Negative	[Not Available]	No History of Primary Risk Factors	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	322	0	0	0	0	0	0	0	0	1	0	0	0
+AAPD	AAPD	61	MALE	Alive	20	Negative	HBV Surface Antibody	Hepatitis B	G1	T2	N0	M0	Stage II	NO	[Not Applicable]	20	1	0	0	0	0	0	0	0	0	0	0	1
+AA1C	AA1C	57	MALE	Alive	63	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	No History of Primary Risk Factors	G2	T2	N0	M0	Stage II	NO	[Not Applicable]	63	0	0	0	1	0	1	0	0	1	0	0	0
+AA1D	AA1D	17	FEMALE	Alive	61	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	No History of Primary Risk Factors	G3	T3a	N0	M0	Stage III	NO	[Not Applicable]	61	0	0	0	1	0	1	0	0	1	0	0	0
+AAAM	AAAM	65	FEMALE	Dead	46	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	No History of Primary Risk Factors	G2	T2	N0	M0	Stage II	NO	46	[Not Available]	0	0	0	1	0	1	0	0	1	0	0	0
+4072	4072	74	FEMALE	Dead	1490	Negative	[Not Available]	No History of Primary Risk Factors	G3	T3	N0	M0	Stage III	[Not Available]	1490	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+4073	4073	73	MALE	Alive	352	Negative	[Not Available]	Hemochromatosis	G3	T3	N0	MX	Stage III	[Not Available]	[Not Applicable]	352	0	0	0	0	0	0	0	0	0	0	0	0
+A10Q	A10Q	72	FEMALE	Dead	1135	Negative	[Not Available]	No History of Primary Risk Factors	[Not Available]	T2	NX	MX	[Not Available]	[Not Available]	1135	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A10R	A10R	66	FEMALE	Dead	308	Negative	[Not Available]	No History of Primary Risk Factors	G2	T3	NX	MX	[Not Available]	[Not Available]	308	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A10S	A10S	81	MALE	Dead	1423	Negative	[Unknown]	Alcohol consumption	G1	T3	NX	MX	[Not Available]	[Not Available]	1423	[Not Available]	0	0	0	0	0	0	0	1	0	0	0	0
+A10T	A10T	76	MALE	Dead	837	Negative	[Not Available]	No History of Primary Risk Factors	G1	T4	NX	MX	[Not Available]	[Not Available]	837	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A10U	A10U	69	MALE	Dead	837	Negative	[Not Available]	Alcohol consumption	G2	T2	NX	MX	[Not Available]	[Not Available]	837	[Not Available]	0	0	0	0	0	0	0	1	0	0	0	0
+A10W	A10W	50	MALE	Dead	91	Positive	Hepatitis B Surface Antigen	Hepatitis B	G3	T4	NX	MX	[Not Available]	[Not Available]	91	[Not Available]	0	0	0	1	0	0	0	0	0	0	0	1
+A10X	A10X	52	FEMALE	Dead	770	Negative	[Not Available]	No History of Primary Risk Factors	G2	T3a	N0	MX	Stage III	[Not Available]	770	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A10Y	A10Y	76	MALE	Dead	711	Negative	[Not Available]	Alcohol consumption	G3	T4	NX	MX	[Not Available]	[Not Available]	711	[Not Available]	0	0	0	0	0	0	0	1	0	0	0	0
+A10Z	A10Z	62	FEMALE	Dead	34	Negative	[Unknown]	No History of Primary Risk Factors	G2	T1	N0	MX	Stage I	[Not Available]	34	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A110	A110	51	FEMALE	Dead	2116	Negative	[Not Available]	Alcohol consumption	G1	T1	NX	MX	[Not Available]	[Not Available]	2116	[Not Available]	0	0	0	0	0	0	0	1	0	0	0	0
+A112	A112	80	MALE	Dead	153	Negative	[Not Available]	Alcohol consumption	G2	T3	NX	MX	[Not Available]	[Not Available]	153	[Not Available]	0	0	0	0	0	0	0	1	0	0	0	0
+A216	A216	62	FEMALE	Alive	1144	Negative	[Not Available]	No History of Primary Risk Factors	G2	T3	NX	M0	Stage III	[Not Available]	[Not Applicable]	1144	0	0	0	0	0	0	0	0	1	0	0	0
+A217	A217	75	FEMALE	Alive	421	Negative	[Not Available]	Alcohol consumption	G3	T2	NX	M0	Stage II	[Not Available]	[Not Applicable]	421	0	0	0	0	0	0	0	1	0	0	0	0
+A3KF	A3KF	66	FEMALE	Alive	8	Negative	[Not Available]	No History of Primary Risk Factors	G2	T1	NX	M0	Stage I	[Not Available]	[Not Applicable]	8	0	0	0	0	0	0	0	0	1	0	0	0
+A3KG	A3KG	68	FEMALE	Alive	252	Negative	[Not Available]	Alcohol consumption	G3	T2	N0	M0	Stage II	[Not Available]	[Not Applicable]	252	0	0	0	0	0	0	0	1	0	0	0	0
+A5W4	A5W4	69	MALE	Alive	289	Negative	[Not Available]	Alcohol consumption	G3	T3a	NX	M0	Stage III	NO	[Not Applicable]	289	0	0	0	0	0	0	0	1	0	0	0	0
+A69H	A69H	64	MALE	Alive	120	Negative	[Not Available]	Alcohol consumption	G3	T2	NX	M0	Stage II	NO	[Not Applicable]	120	0	0	0	0	0	0	0	1	0	0	0	0
+A69I	A69I	69	MALE	Alive	16	Negative	[Not Available]	No History of Primary Risk Factors	G1	T1	N0	M0	Stage I	NO	[Not Applicable]	16	0	0	0	0	0	0	0	0	1	0	0	0
+A8YO	A8YO	66	FEMALE	Alive	227	Negative	[Not Available]	Alcohol consumption|Other	G3	T4	N0	M0	Stage III	YES	[Not Applicable]	227	0	0	0	0	0	0	0	1	0	0	0	0
+A2L6	A2L6	69	MALE	Alive	289	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Alcohol consumption	G2	T2	NX	MX	[Not Available]	[Not Available]	[Not Applicable]	289	1	0	0	1	1	0	0	1	0	0	0	0
+A3EP	A3EP	75	FEMALE	Alive	409	Negative	[Not Available]	No History of Primary Risk Factors	G2	T1	N0	M0	Stage I	[Not Available]	[Not Applicable]	409	0	0	0	0	0	0	0	0	1	0	0	0
+A3ER	A3ER	62	MALE	Alive	146	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Hemochromatosis	G2	T2	NX	MX	Stage II	[Not Available]	[Not Applicable]	146	1	0	0	1	1	0	0	0	0	0	0	0
+A5NO	A5NO	50	MALE	Alive	20	Negative	[Not Available]	Hepatitis C	G2	T3a	NX	MX	Stage III	NO	[Not Applicable]	20	0	0	0	0	0	0	0	0	0	0	1	0
+A5NP	A5NP	26	FEMALE	Alive	0	Negative	[Not Available]	Hepatitis B	G3	T2	N0	M1	Stage IV	YES	[Not Applicable]	0	0	0	0	0	0	0	0	0	0	0	0	1
+A5NQ	A5NQ	63	MALE	Alive	0	Negative	[Not Available]	Alcohol consumption|Other	G3	T1	NX	MX	Stage I	[Unknown]	[Not Applicable]	0	0	0	0	0	0	0	0	1	0	0	0	0
+5258	5258	48	MALE	Alive	0	Negative	Hepatitis  C Antibody|HBV Surface Antibody	[Not Available]	G2	T2	N0	M0	Stage II	[Not Available]	[Not Applicable]	0	1	0	0	0	0	1	0	0	0	0	0	0
+5259	5259	60	FEMALE	Alive	5	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	No History of Primary Risk Factors	G2	T4	N0	M0	Stage III	[Not Available]	[Not Applicable]	5	0	0	0	1	0	1	0	0	1	0	0	0
+5260	5260	61	FEMALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	[Not Available]	G1	T4	N0	M0	Stage III	[Not Available]	[Not Applicable]	0	0	0	0	1	0	1	0	0	0	0	0	0
+5261	5261	44	MALE	Alive	12	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	[Not Available]	G2	T2	N0	M0	Stage II	[Not Available]	[Not Applicable]	12	0	0	0	1	0	1	0	0	0	0	0	0
+5262	5262	67	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	No History of Primary Risk Factors	G1	T4	N0	M0	Stage III	[Not Available]	[Not Applicable]	0	0	0	0	1	0	1	0	0	1	0	0	0
+5263	5263	35	MALE	Dead	129	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	No History of Primary Risk Factors	G1	T3	N0	M0	Stage III	[Not Available]	129	[Not Available]	0	0	0	1	0	1	0	0	1	0	0	0
+5264	5264	71	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	[Not Available]	G2	T3	N0	M0	Stage III	[Not Available]	[Not Applicable]	0	0	0	0	1	0	1	0	0	0	0	0	0
+A123	A123	24	FEMALE	Alive	-8	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	[Not Available]	G1	T3	N0	M0	Stage III	[Not Available]	[Not Applicable]	-8	0	0	0	1	0	1	0	0	0	0	0	0
+A1HT	A1HT	50	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	No History of Primary Risk Factors	G3	T3	N0	M0	Stage III	[Not Available]	[Not Applicable]	0	0	0	0	1	0	1	0	0	1	0	0	0
+A3M9	A3M9	45	MALE	Alive	3	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G3	T3	N0	M0	Stage III	[Not Available]	[Not Applicable]	3	0	0	0	1	0	1	0	1	0	0	0	0
+A3MA	A3MA	61	MALE	Alive	2	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G2	T3	N0	M0	Stage III	[Not Available]	[Not Applicable]	2	0	0	0	1	0	1	0	1	0	0	0	0
+A3MB	A3MB	36	MALE	Alive	3	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	No History of Primary Risk Factors	G1	T3	N0	M0	Stage III	[Not Available]	[Not Applicable]	3	0	0	0	1	0	1	0	0	1	0	0	0
+A3MC	A3MC	54	MALE	Alive	4	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G2	T3	N0	M0	Stage III	[Not Available]	[Not Applicable]	4	0	0	0	1	0	1	0	1	0	0	0	0
+A5UC	A5UC	63	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G3	T3	N0	M0	Stage III	NO	[Not Applicable]	0	0	0	0	1	0	1	0	1	0	0	0	0
+A5UD	A5UD	45	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G2	T3	N0	M0	Stage III	NO	[Not Applicable]	0	0	0	0	1	0	1	0	1	0	0	0	0
+A5UE	A5UE	48	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G2	T4	N0	M0	Stage III	NO	[Not Applicable]	0	0	0	0	1	0	1	0	1	0	0	0	0
+A7IE	A7IE	57	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G2	T3	N0	M0	Stage III	NO	[Not Applicable]	0	0	0	0	1	0	1	0	1	0	0	0	0
+A7IF	A7IF	59	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G1	T3	N0	M0	Stage III	NO	[Not Applicable]	0	0	0	0	1	0	1	0	1	0	0	0	0
+A7IG	A7IG	47	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G2	T2	N0	M0	Stage II	NO	[Not Applicable]	0	0	0	0	1	0	1	0	1	0	0	0	0
+A7IH	A7IH	58	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G1	T3	N0	M0	Stage III	NO	[Not Applicable]	0	0	0	0	1	0	1	0	1	0	0	0	0
+A7II	A7II	54	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G3	T3	N0	M0	Stage III	NO	[Not Applicable]	0	0	0	0	1	0	1	0	1	0	0	0	0
+A7IJ	A7IJ	56	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G3	T2	N0	M0	Stage II	NO	[Not Applicable]	0	0	0	0	1	0	1	0	1	0	0	0	0
+A7IK	A7IK	59	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G3	T3	N0	M0	Stage III	NO	[Not Applicable]	0	0	0	0	1	0	1	0	1	0	0	0	0
+A7IL	A7IL	61	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G1	T3	N0	M0	Stage III	NO	[Not Applicable]	0	0	0	0	1	0	1	0	1	0	0	0	0
+A8HS	A8HS	18	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	No History of Primary Risk Factors	G1	T3	N1	M0	Stage III	NO	[Not Applicable]	0	0	0	0	1	0	1	0	0	1	0	0	0
+A8HT	A8HT	74	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G2	T3	N0	M0	Stage III	NO	[Not Applicable]	0	0	0	0	1	0	1	0	1	0	0	0	0
+A8HU	A8HU	39	FEMALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	No History of Primary Risk Factors	G3	T3	N0	M0	Stage III	NO	[Not Applicable]	0	0	0	0	1	0	1	0	0	1	0	0	0
+A8HV	A8HV	51	FEMALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	No History of Primary Risk Factors	G2	T2	N0	M0	Stage II	NO	[Not Applicable]	0	0	0	0	1	0	1	0	0	1	0	0	0
+A9FS	A9FS	55	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G2	T2	N0	M0	Stage II	NO	[Not Applicable]	0	0	0	0	1	0	1	0	1	0	0	0	0
+A9FU	A9FU	52	FEMALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Hepatitis B	G2	T3a	N0	M0	Stage III	NO	[Not Applicable]	0	0	0	0	1	0	1	0	0	0	0	0	1
+A9FV	A9FV	57	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G2	T3	N0	M0	Stage III	NO	[Not Applicable]	0	0	0	0	1	0	1	0	1	0	0	0	0
+A9FW	A9FW	68	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G2	T3	N0	M0	Stage III	NO	[Not Applicable]	0	0	0	0	1	0	1	0	1	0	0	0	0
+A113	A113	55	FEMALE	Alive	1678	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Other	G3	T2	N0	M0	Stage II	[Not Available]	[Not Applicable]	1678	1	0	0	1	1	0	0	0	0	0	0	0
+A114	A114	42	MALE	Dead	1149	Positive	Hepatitis C Virus RNA|HCV Genotype|Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Hepatitis C	G3	T2	[Not Available]	M0	Stage II	[Not Available]	1149	[Not Available]	1	0	1	1	1	0	1	0	0	0	1	0
+A115	A115	53	MALE	Dead	2542	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Alcohol consumption	G2	T3	N0	M0	Stage III	[Not Available]	2542	[Not Available]	1	0	0	1	1	0	0	1	0	0	0	0
+A116	A116	68	MALE	Dead	1622	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Hepatitis B	G3	T3	N0	M0	Stage III	[Not Available]	1622	[Not Available]	1	0	0	1	1	0	0	0	0	0	0	1
+A118	A118	77	FEMALE	Alive	693	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	[Not Available]	G2	T2	N0	M0	Stage II	[Not Available]	[Not Applicable]	693	1	0	0	1	1	0	0	0	0	0	0	0
+A119	A119	40	MALE	Dead	223	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Hepatitis B	G3	T3a	N0	M1	Stage IV	[Not Available]	223	[Not Available]	1	0	0	1	1	0	0	0	0	0	0	1
+A11A	A11A	67	MALE	Alive	79	Positive	Hepatitis B Surface Antigen|HBV Core Antibody	Other	G3	T1	N0	M0	Stage I	[Not Available]	[Not Applicable]	79	0	0	0	1	1	0	0	0	0	0	0	0
+A11B	A11B	73	MALE	Dead	14	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Non-Alcoholic Fatty Liver Disease	G2	T1	N0	M0	Stage I	[Not Available]	14	[Not Available]	1	0	0	1	1	0	0	0	0	1	0	0
+A11C	A11C	69	MALE	Alive	662	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	[Not Available]	G3	T1	N0	M0	Stage I	[Not Available]	[Not Applicable]	662	1	0	0	1	1	0	0	0	0	0	0	0
+A11D	A11D	57	FEMALE	Dead	1560	Negative	[Unknown]	Non-Alcoholic Fatty Liver Disease	G2	T1	N0	M0	Stage I	[Not Available]	1560	[Not Available]	0	0	0	0	0	0	0	0	0	1	0	0
+A1E9	A1E9	70	MALE	Dead	2759	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Alcohol consumption	G2	T1	N0	M0	Stage I	[Not Available]	2759	[Not Available]	1	0	0	1	1	0	0	1	0	0	0	0
+A1EA	A1EA	68	MALE	Alive	2415	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody|HBV DNA	Hepatitis B	G2	T2	N0	M0	Stage II	[Not Available]	[Not Applicable]	2415	1	1	0	1	1	0	0	0	0	0	0	1
+A1EB	A1EB	72	FEMALE	Alive	2017	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Other	G2	T1	N0	M0	Stage I	[Not Available]	[Not Applicable]	2017	1	0	0	1	1	0	0	0	0	0	0	0
+A1EC	A1EC	20	FEMALE	Alive	602	Negative	[Unknown]	[Not Available]	G3	T1	N0	M0	Stage I	[Not Available]	[Not Applicable]	602	0	0	0	0	0	0	0	0	0	0	0	0
+A1ED	A1ED	68	MALE	Alive	1629	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Alcohol consumption	G1	T1	N0	M0	Stage I	[Not Available]	[Not Applicable]	1629	1	0	0	1	1	0	0	1	0	0	0	0
+A1EE	A1EE	73	MALE	Alive	204	Positive	Hepatitis C Virus RNA|HCV Genotype|Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Hepatitis C	G3	T3	N0	M0	Stage III	[Not Available]	[Not Applicable]	204	1	0	1	1	1	0	1	0	0	0	1	0
+A1EF	A1EF	57	FEMALE	Dead	394	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	No History of Primary Risk Factors	G3	T1	N0	M0	Stage I	[Not Available]	394	[Not Available]	1	0	0	1	1	0	0	0	1	0	0	0
+A1EG	A1EG	76	MALE	Dead	1372	Positive	Hepatitis B Surface Antigen	Alcohol consumption|Non-Alcoholic Fatty Liver Disease	G3	T1	N0	M0	Stage I	YES	1372	[Not Available]	0	0	0	1	0	0	0	1	0	1	0	0
+A1EH	A1EH	23	MALE	Alive	1036	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody|HBV DNA	Hepatitis B	G3	T3	N0	M0	Stage III	[Not Available]	[Not Applicable]	1036	1	1	0	1	1	0	0	0	0	0	0	1
+A1EI	A1EI	46	MALE	Alive	183	Positive	Hepatitis B Surface Antigen|HBV DNA	Hepatitis B	G2	T1	N0	M0	Stage I	[Not Available]	[Not Applicable]	183	0	1	0	1	0	0	0	0	0	0	0	1
+A1EJ	A1EJ	71	FEMALE	Alive	887	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	No History of Primary Risk Factors	G2	T1	N1	M0	Stage III	[Not Available]	[Not Applicable]	887	1	0	0	1	1	0	0	0	1	0	0	0
+A1EK	A1EK	64	FEMALE	Dead	558	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Other	G2	T4	N0	M1	Stage IV	YES	558	[Not Available]	1	0	0	1	1	0	0	0	0	0	0	0
+A1EL	A1EL	23	MALE	Dead	415	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody|HBV DNA	Hepatitis B	G3	T2	N0	M0	Stage II	[Not Available]	415	[Not Available]	1	1	0	1	1	0	0	0	0	0	0	1
+A39V	A39V	77	MALE	Dead	643	Negative	[Not Available]	No History of Primary Risk Factors	G3	T2	NX	M0	Stage II	[Not Available]	643	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A39W	A39W	29	FEMALE	Dead	827	Negative	[Unknown]	No History of Primary Risk Factors	G2	T3	N0	M0	Stage III	[Not Available]	827	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A39X	A39X	78	FEMALE	Dead	1694	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody	No History of Primary Risk Factors	G2	T1	NX	M0	Stage I	[Not Available]	1694	[Not Available]	1	0	0	1	0	0	0	0	1	0	0	0
+A39Y	A39Y	67	MALE	Dead	171	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	No History of Primary Risk Factors	G3	T1	NX	M0	Stage I	[Not Available]	171	[Not Available]	1	0	0	1	1	0	0	0	1	0	0	0
+A39Z	A39Z	43	FEMALE	Dead	601	Negative	[Unknown]	Alcohol consumption	G2	T2	NX	M0	Stage II	[Not Available]	601	[Not Available]	0	0	0	0	0	0	0	1	0	0	0	0
+A3A0	A3A0	70	MALE	Dead	785	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	No History of Primary Risk Factors	G2	T1	NX	M0	Stage I	[Not Available]	785	[Not Available]	1	0	0	1	1	0	0	0	1	0	0	0
+A3A1	A3A1	65	MALE	Dead	233	Negative	[Unknown]	No History of Primary Risk Factors	G2	T3b	N0	M0	Stage III	[Not Available]	233	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A3A2	A3A2	76	FEMALE	Dead	2131	Negative	[Unknown]	No History of Primary Risk Factors	G1	T1	N0	M0	Stage I	[Not Available]	2131	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A3A3	A3A3	45	MALE	Dead	535	Negative	[Not Available]	No History of Primary Risk Factors	G2	T1	N0	M0	Stage I	[Not Available]	535	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A3A4	A3A4	37	MALE	Dead	612	Negative	[Not Available]	Other	G3	T3	N0	M0	Stage III	[Not Available]	612	[Not Available]	0	0	0	0	0	0	0	0	0	0	0	0
+A3A5	A3A5	66	FEMALE	Dead	3125	Negative	[Unknown]	No History of Primary Risk Factors	G2	T3	N0	M0	Stage III	[Not Available]	3125	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A3A6	A3A6	72	FEMALE	Dead	3258	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	No History of Primary Risk Factors	G2	T2	N0	M0	Stage II	[Not Available]	3258	[Not Available]	1	0	0	1	1	0	0	0	1	0	0	0
+A3A7	A3A7	67	MALE	Dead	419	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Alcohol consumption|Other	G3	T3b	N0	M0	Stage III	YES	419	[Not Available]	1	0	0	1	1	0	0	1	0	0	0	0
+A3A8	A3A8	75	MALE	Dead	11	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	No History of Primary Risk Factors	G2	T2	N0	M0	Stage II	[Not Available]	11	[Not Available]	1	0	0	1	1	0	0	0	1	0	0	0
+A3A9	A3A9	64	FEMALE	Dead	931	Negative	[Unknown]	Other	G2	T4	N0	M1	Stage IV	[Not Available]	931	[Not Available]	0	0	0	0	0	0	0	0	0	0	0	0
+A4NA	A4NA	67	FEMALE	Alive	1008	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody	No History of Primary Risk Factors	G3	T2	N1	M0	Stage III	NO	[Not Applicable]	1008	1	0	0	1	0	0	0	0	1	0	0	0
+A4NB	A4NB	25	MALE	Alive	391	Negative	[Unknown]	No History of Primary Risk Factors	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	391	0	0	0	0	0	0	0	0	1	0	0	0
+A4ND	A4ND	56	FEMALE	Alive	2141	Negative	[Unknown]	No History of Primary Risk Factors	G3	T1	N0	M0	Stage I	YES	[Not Applicable]	2141	0	0	0	0	0	0	0	0	1	0	0	0
+A4NE	A4NE	75	FEMALE	Dead	660	Positive	Hepatitis C Virus RNA|Hepatitis B Surface Antigen|HBV Core Antibody	No History of Primary Risk Factors	G3	T3a	N0	M0	Stage III	YES	660	[Not Available]	0	0	1	1	1	0	0	0	1	0	0	0
+A4NF	A4NF	72	MALE	Alive	428	Positive	Hepatitis C Virus RNA|HCV Genotype|Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Hepatitis C	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	428	1	0	1	1	1	0	1	0	0	0	1	0
+A4NG	A4NG	77	MALE	Alive	445	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Alcohol consumption	G2	T3a	NX	M0	Stage III	YES	[Not Applicable]	445	1	0	0	1	1	0	0	1	0	0	0	0
+A4NH	A4NH	65	FEMALE	Alive	433	Positive	Hepatitis B Surface Antigen	Alcohol consumption	G3	T3b	N0	M0	Stage III	YES	[Not Applicable]	433	0	0	0	1	0	0	0	1	0	0	0	0
+A4NI	A4NI	67	MALE	Alive	328	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Alcohol consumption|Non-Alcoholic Fatty Liver Disease	G2	T2	NX	M0	Stage II	NO	[Not Applicable]	328	1	0	0	1	1	0	0	1	0	1	0	0
+A4NJ	A4NJ	54	FEMALE	Alive	458	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Non-Alcoholic Fatty Liver Disease	G2	T2	N0	M0	Stage II	NO	[Not Applicable]	458	1	0	0	1	1	0	0	0	0	1	0	0
+A4NK	A4NK	80	FEMALE	Dead	1210	Positive	Hepatitis B Surface Antigen	No History of Primary Risk Factors	G2	T3	N0	M0	Stage III	YES	1210	[Not Available]	0	0	0	1	0	0	0	0	1	0	0	0
+A4NL	A4NL	46	MALE	Alive	1711	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Alcohol consumption|Other	G1	T1	N0	M0	Stage I	NO	[Not Applicable]	1711	1	0	0	1	1	0	0	1	0	0	0	0
+A4NN	A4NN	56	FEMALE	Dead	899	Negative	[Unknown]	No History of Primary Risk Factors	G3	T1	N0	M0	Stage I	YES	899	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A4NO	A4NO	65	MALE	Alive	1869	Positive	Hepatitis C Virus RNA|Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Hepatitis C|Other	G1	T1	N0	M0	Stage I	YES	[Not Applicable]	1869	1	0	1	1	1	0	0	0	0	0	1	0
+A4NP	A4NP	32	MALE	Alive	2849	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	No History of Primary Risk Factors	G3	T1	N0	M0	Stage I	YES	[Not Applicable]	2849	1	0	0	1	1	0	0	0	1	0	0	0
+A4NQ	A4NQ	60	MALE	Dead	373	Positive	Hepatitis C Virus RNA|Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Hepatitis B|Other	G3	T2	N0	M0	Stage II	YES	373	[Not Available]	1	0	1	1	1	0	0	0	0	0	0	1
+A4NR	A4NR	85	FEMALE	Dead	9	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Other	G3	T1	N0	M0	Stage I	NO	9	[Not Available]	1	0	0	1	1	0	0	0	0	0	0	0
+A4NS	A4NS	61	FEMALE	Dead	2456	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Alcohol consumption	G2	T1	N0	M0	Stage I	YES	2456	[Not Available]	1	0	0	1	1	0	0	1	0	0	0	0
+A4NV	A4NV	61	MALE	Alive	2018	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Non-Alcoholic Fatty Liver Disease|Other	G1	T3	N0	M0	Stage III	NO	[Not Applicable]	2018	1	0	0	1	1	0	0	0	0	1	0	0
+A73A	A73A	71	MALE	Alive	334	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Alcohol consumption	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	334	1	0	0	1	1	0	0	1	0	0	0	0
+A73B	A73B	72	FEMALE	Dead	283	Positive	Hepatitis B Surface Antigen	Alpha-1 Antitrypsin Deficiency|Other	G2	T1	N0	M0	Stage I	YES	283	[Not Available]	0	0	0	1	0	0	0	0	0	0	0	0
+A73C	A73C	65	FEMALE	Alive	230	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	No History of Primary Risk Factors	G1	T3a	N0	M0	Stage III	NO	[Not Applicable]	230	1	0	0	1	1	0	0	0	1	0	0	0
+A73D	A73D	68	FEMALE	Alive	334	Positive	Hepatitis C Virus RNA|Hepatitis B Surface Antigen	Hepatitis C	G1	T2	NX	MX	Stage II	NO	[Not Applicable]	334	0	0	1	1	0	0	0	0	0	0	1	0
+A73E	A73E	66	MALE	Alive	44	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody	Alcohol consumption|Non-Alcoholic Fatty Liver Disease	G1	T1	N0	M0	Stage I	NO	[Not Applicable]	44	1	0	0	1	0	0	0	1	0	1	0	0
+A73F	A73F	77	FEMALE	Alive	843	Negative	[Unknown]	No History of Primary Risk Factors	G1	T1	N0	M0	Stage I	NO	[Not Applicable]	843	0	0	0	0	0	0	0	0	1	0	0	0
+A73G	A73G	73	FEMALE	Alive	3071	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	No History of Primary Risk Factors	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	3071	1	0	0	1	1	0	0	0	1	0	0	0
+AA3A	AA3A	81	FEMALE	Dead	410	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	No History of Primary Risk Factors	G4	T1	N0	MX	Stage I	[Unknown]	410	[Not Available]	1	0	0	1	1	0	0	0	1	0	0	0
+AAC8	AAC8	72	MALE	Dead	16	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	NO	16	[Not Available]	0	0	0	0	0	0	0	0	0	0	0	1
+AAC9	AAC9	51	MALE	Alive	347	Negative	[Unknown]	Hepatitis B	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	347	0	0	0	0	0	0	0	0	0	0	0	1
+AACA	AACA	65	MALE	Alive	2000	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	YES	[Not Applicable]	2000	0	0	0	0	0	0	0	0	0	0	0	1
+AACB	AACB	74	FEMALE	Alive	1800	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	1800	0	0	0	0	0	0	0	0	0	0	0	1
+AACC	AACC	61	MALE	Dead	1685	Negative	[Unknown]	Hepatitis B	G2	T1	N0	M0	Stage I	YES	1685	[Not Available]	0	0	0	0	0	0	0	0	0	0	0	1
+AACD	AACD	48	MALE	Dead	381	Negative	[Unknown]	Hepatitis B	G4	T1	N0	M0	Stage I	YES	381	[Not Available]	0	0	0	0	0	0	0	0	0	0	0	1
+AACE	AACE	62	MALE	Alive	1931	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	YES	[Not Applicable]	1931	0	0	0	0	0	0	0	0	0	0	0	1
+AACF	AACF	68	MALE	Dead	365	Negative	[Unknown]	Hepatitis C	G3	T1	N0	M0	Stage I	YES	365	[Not Available]	0	0	0	0	0	0	0	0	0	0	1	0
+AACG	AACG	52	MALE	Dead	469	Negative	[Unknown]	Hepatitis B	G4	T2	N0	M0	Stage II	YES	469	[Not Available]	0	0	0	0	0	0	0	0	0	0	0	1
+AACH	AACH	69	MALE	Dead	195	Negative	[Unknown]	Hepatitis B	G3	T2	N0	M0	Stage II	YES	195	[Not Available]	0	0	0	0	0	0	0	0	0	0	0	1
+AACI	AACI	69	MALE	Alive	1618	Negative	[Unknown]	[Unknown]	G3	T2	N0	M0	Stage II	YES	[Not Applicable]	1618	0	0	0	0	0	0	0	0	0	0	0	0
+AACJ	AACJ	75	MALE	Alive	1828	Negative	[Unknown]	[Unknown]	G2	T2	N0	M0	Stage II	YES	[Not Applicable]	1828	0	0	0	0	0	0	0	0	0	0	0	0
+AACK	AACK	70	MALE	Alive	9	Negative	[Unknown]	Hepatitis B	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	9	0	0	0	0	0	0	0	0	0	0	0	1
+AACL	AACL	66	FEMALE	Alive	58	Negative	[Unknown]	Hepatitis C	G3	T1	N0	M0	Stage I	[Unknown]	[Not Applicable]	58	0	0	0	0	0	0	0	0	0	0	1	0
+AACM	AACM	48	MALE	Alive	1769	Negative	[Unknown]	Hepatitis B	G3	T2	N0	M0	Stage II	YES	[Not Applicable]	1769	0	0	0	0	0	0	0	0	0	0	0	1
+AACN	AACN	32	MALE	Alive	1292	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	YES	[Not Applicable]	1292	0	0	0	0	0	0	0	0	0	0	0	1
+AACO	AACO	40	MALE	Alive	1485	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	YES	[Not Applicable]	1485	0	0	0	0	0	0	0	0	0	0	0	1
+AACP	AACP	64	MALE	Alive	400	Negative	[Unknown]	Alcohol consumption	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	400	0	0	0	0	0	0	0	1	0	0	0	0
+AACQ	AACQ	50	MALE	Alive	429	Negative	[Unknown]	Hepatitis B	G3	T2	N0	M0	Stage II	YES	[Not Applicable]	429	0	0	0	0	0	0	0	0	0	0	0	1
+AACS	AACS	39	MALE	Alive	1475	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	1475	0	0	0	0	0	0	0	0	0	0	0	1
+AACT	AACT	69	FEMALE	Alive	1291	Negative	[Unknown]	Hepatitis B	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	1291	0	0	0	0	0	0	0	0	0	0	0	1
+AACU	AACU	59	MALE	Alive	1240	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	1240	0	0	0	0	0	0	0	0	0	0	0	1
+AACV	AACV	53	MALE	Alive	1210	Negative	[Unknown]	Alcohol consumption	G3	T1	N0	M0	Stage I	YES	[Not Applicable]	1210	0	0	0	0	0	0	0	1	0	0	0	0
+AACW	AACW	43	MALE	Alive	1157	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	1157	0	0	0	0	0	0	0	1	0	0	0	1
+AACX	AACX	66	MALE	Alive	170	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G3	T2	N0	M0	Stage II	YES	[Not Applicable]	170	0	0	0	0	0	0	0	1	0	0	0	1
+AACY	AACY	61	MALE	Alive	1140	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	YES	[Not Applicable]	1140	0	0	0	0	0	0	0	0	0	0	0	1
+AACZ	AACZ	63	FEMALE	Dead	171	Negative	[Unknown]	[Unknown]	G4	T1	N0	M0	Stage I	YES	171	[Not Available]	0	0	0	0	0	0	0	0	0	0	0	0
+AAD0	AAD0	73	FEMALE	Alive	137	Negative	[Unknown]	Hepatitis B	G2	T1	N0	M0	Stage I	YES	[Not Applicable]	137	0	0	0	0	0	0	0	0	0	0	0	1
+AAD1	AAD1	51	FEMALE	Alive	564	Negative	[Unknown]	Hepatitis B|Hepatitis C	G4	T1	N0	M0	Stage I	YES	[Not Applicable]	564	0	0	0	0	0	0	0	0	0	0	1	1
+AAD2	AAD2	66	MALE	Alive	658	Negative	[Unknown]	Hepatitis B	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	658	0	0	0	0	0	0	0	0	0	0	0	1
+AAD3	AAD3	43	MALE	Alive	1029	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	1029	0	0	0	0	0	0	0	1	0	0	0	1
+AAD5	AAD5	54	MALE	Alive	1037	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G3	T1	N0	M0	Stage I	YES	[Not Applicable]	1037	0	0	0	0	0	0	0	1	0	0	0	1
+AAD6	AAD6	66	MALE	Alive	672	Negative	[Unknown]	Hepatitis B	G3	T3a	N0	M0	Stage III	YES	[Not Applicable]	672	0	0	0	0	0	0	0	0	0	0	0	1
+AAD8	AAD8	73	FEMALE	Alive	959	Negative	[Unknown]	Hepatitis B|Hepatitis C	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	959	0	0	0	0	0	0	0	0	0	0	1	1
+AADA	AADA	66	FEMALE	Alive	930	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	930	0	0	0	0	0	0	0	0	0	0	0	1
+AADB	AADB	51	MALE	Alive	890	Negative	[Unknown]	Hepatitis B	G4	T1	N0	M0	Stage I	NO	[Not Applicable]	890	0	0	0	0	0	0	0	0	0	0	0	1
+AADC	AADC	53	MALE	Dead	425	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	YES	425	[Not Available]	0	0	0	0	0	0	0	0	0	0	0	1
+AADD	AADD	51	MALE	Alive	864	Negative	[Unknown]	Hepatitis B	G4	T1	N0	M0	Stage I	NO	[Not Applicable]	864	0	0	0	0	0	0	0	0	0	0	0	1
+AADE	AADE	50	MALE	Alive	918	Negative	[Unknown]	Hepatitis B	G4	T1	N0	M0	Stage I	YES	[Not Applicable]	918	0	0	0	0	0	0	0	0	0	0	0	1
+AADF	AADF	64	FEMALE	Dead	115	Negative	[Unknown]	Hepatitis B	G4	T1	N0	M0	Stage I	NO	115	[Not Available]	0	0	0	0	0	0	0	0	0	0	0	1
+AADG	AADG	70	MALE	Alive	808	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G3	T3a	N0	M0	Stage III	YES	[Not Applicable]	808	0	0	0	0	0	0	0	1	0	0	0	1
+AADI	AADI	43	FEMALE	Alive	763	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	763	0	0	0	0	0	0	0	0	0	0	0	1
+AADJ	AADJ	70	FEMALE	Alive	730	Negative	[Unknown]	[Unknown]	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	730	0	0	0	0	0	0	0	0	0	0	0	0
+AADK	AADK	68	FEMALE	Alive	734	Negative	[Unknown]	Hepatitis B	G3	T2	N0	M0	Stage II	NO	[Not Applicable]	734	0	0	0	0	0	0	0	0	0	0	0	1
+AADL	AADL	58	MALE	Alive	636	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G4	T1	N0	M0	Stage I	NO	[Not Applicable]	636	0	0	0	0	0	0	0	1	0	0	0	1
+AADM	AADM	58	MALE	Dead	12	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G3	T2	N0	M0	Stage II	NO	12	[Not Available]	0	0	0	0	0	0	0	1	0	0	0	1
+AADN	AADN	59	MALE	Alive	527	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G4	T1	NX	MX	Stage I	NO	[Not Applicable]	527	0	0	0	0	0	0	0	1	0	0	0	1
+AADO	AADO	55	MALE	Alive	92	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	92	0	0	0	0	0	0	0	1	0	0	0	1
+AADP	AADP	45	MALE	Alive	120	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	120	0	0	0	0	0	0	0	0	0	0	0	1
+AADQ	AADQ	59	MALE	Alive	161	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G3	T2	N0	M0	Stage II	NO	[Not Applicable]	161	0	0	0	0	0	0	0	1	0	0	0	1
+AADR	AADR	58	MALE	Alive	1742	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G3	T1	N0	M0	Stage I	YES	[Not Applicable]	1742	0	0	0	0	0	0	0	1	0	0	0	1
+AADS	AADS	63	MALE	Alive	216	Negative	[Unknown]	Alcohol consumption|Hepatitis C	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	216	0	0	0	0	0	0	0	1	0	0	1	0
+AADU	AADU	60	MALE	Alive	252	Negative	[Unknown]	Alcohol consumption	G3	T2	N0	M0	Stage II	NO	[Not Applicable]	252	0	0	0	0	0	0	0	1	0	0	0	0
+AADV	AADV	50	MALE	Alive	230	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	230	0	0	0	0	0	0	0	1	0	0	0	1
+AADW	AADW	48	MALE	Alive	203	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	203	0	0	0	0	0	0	0	0	0	0	0	1
+AADY	AADY	55	FEMALE	Alive	294	Negative	[Unknown]	Hepatitis B	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	294	0	0	0	0	0	0	0	0	0	0	0	1
+AAE0	AAE0	45	FEMALE	Alive	300	Negative	[Unknown]	Hepatitis B	G4	T3a	N0	M0	Stage III	NO	[Not Applicable]	300	0	0	0	0	0	0	0	0	0	0	0	1
+AAE1	AAE1	52	MALE	Alive	293	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	293	0	0	0	0	0	0	0	0	0	0	0	1
+AAE2	AAE2	51	MALE	Alive	288	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	288	0	0	0	0	0	0	0	0	0	0	0	1
+AAE3	AAE3	50	MALE	Alive	300	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	300	0	0	0	0	0	0	0	1	0	0	0	1
+AAE4	AAE4	49	FEMALE	Alive	259	Negative	[Unknown]	Hepatitis B	G1	T1	N0	M0	Stage I	YES	[Not Applicable]	259	0	0	0	0	0	0	0	0	0	0	0	1
+AAE6	AAE6	59	FEMALE	Alive	141	Negative	[Unknown]	[Unknown]	G2	T1	N0	M0	Stage I	YES	[Not Applicable]	141	0	0	0	0	0	0	0	0	0	0	0	0
+AAE7	AAE7	72	MALE	Alive	382	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	382	0	0	0	0	0	0	0	1	0	0	0	1
+AAE8	AAE8	45	MALE	Alive	344	Negative	[Unknown]	Hepatitis B	G3	T1	N0	M0	Stage I	YES	[Not Applicable]	344	0	0	0	0	0	0	0	0	0	0	0	1
+AAE9	AAE9	69	MALE	Alive	386	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	386	0	0	0	0	0	0	0	1	0	0	0	1
+AAEA	AAEA	65	MALE	Alive	450	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	450	0	0	0	0	0	0	0	1	0	0	0	1
+AAEB	AAEB	60	MALE	Alive	370	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	370	0	0	0	0	0	0	0	1	0	0	0	1
+AAED	AAED	51	MALE	Alive	470	Negative	[Unknown]	Alcohol consumption|Hepatitis B	G3	T1	N0	M0	Stage I	YES	[Not Applicable]	470	0	0	0	0	0	0	0	1	0	0	0	1
+AAEE	AAEE	55	MALE	Alive	498	Negative	[Unknown]	Hepatitis B	G4	T1	N0	M0	Stage I	YES	[Not Applicable]	498	0	0	0	0	0	0	0	0	0	0	0	1
+AAEG	AAEG	59	FEMALE	Alive	476	Negative	[Unknown]	No History of Primary Risk Factors	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	476	0	0	0	0	0	0	0	0	1	0	0	0
+AAEH	AAEH	73	MALE	Alive	476	Negative	[Unknown]	[Unknown]	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	476	0	0	0	0	0	0	0	0	0	0	0	0
+AAEI	AAEI	72	MALE	Alive	1233	Negative	[Unknown]	Hepatitis B	G2	T1	N0	M0	Stage I	YES	[Not Applicable]	1233	0	0	0	0	0	0	0	0	0	0	0	1
+AAEK	AAEK	51	MALE	Alive	1067	Negative	[Unknown]	Hepatitis B	G3	T2	N0	M0	Stage II	NO	[Not Applicable]	1067	0	0	0	0	0	0	0	0	0	0	0	1
+AAVP	AAVP	48	MALE	Alive	2405	Negative	[Unknown]	Hepatitis B	G1	T1	N0	M0	Stage I	YES	[Not Applicable]	2405	0	0	0	0	0	0	0	0	0	0	0	1
+AAVQ	AAVQ	38	MALE	Alive	2406	Negative	[Unknown]	Hepatitis B	G2	T1	N0	M0	Stage I	YES	[Not Applicable]	2406	0	0	0	0	0	0	0	0	0	0	0	1
+AAVR	AAVR	44	MALE	Alive	2198	Negative	[Unknown]	Hepatitis B	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	2198	0	0	0	0	0	0	0	0	0	0	0	1
+AAVS	AAVS	56	MALE	Alive	1823	Negative	[Unknown]	Hepatitis B	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	1823	0	0	0	0	0	0	0	0	0	0	0	1
+AAVU	AAVU	46	MALE	Alive	1882	Negative	[Unknown]	Hepatitis B	G2	T2	N0	M0	Stage II	YES	[Not Applicable]	1882	0	0	0	0	0	0	0	0	0	0	0	1
+AAVV	AAVV	56	MALE	Alive	2455	Negative	[Unknown]	Hepatitis B	G3	T2	N0	M0	Stage II	NO	[Not Applicable]	2455	0	0	0	0	0	0	0	0	0	0	0	1
+AAVW	AAVW	35	MALE	Alive	1867	Negative	[Unknown]	Hepatitis B	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	1867	0	0	0	0	0	0	0	0	0	0	0	1
+AAVX	AAVX	38	MALE	Alive	1718	Negative	[Unknown]	Hepatitis B	G2	T2	N0	M0	Stage II	YES	[Not Applicable]	1718	0	0	0	0	0	0	0	0	0	0	0	1
+AAVY	AAVY	56	MALE	Alive	1788	Negative	[Unknown]	No History of Primary Risk Factors	G2	T3	N0	M0	Stage III	NO	[Not Applicable]	1788	0	0	0	0	0	0	0	0	1	0	0	0
+AAVZ	AAVZ	38	MALE	Alive	1699	Negative	[Unknown]	Hepatitis B	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	1699	0	0	0	0	0	0	0	0	0	0	0	1
+AAW0	AAW0	54	MALE	Alive	1644	Negative	[Unknown]	Hepatitis B	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	1644	0	0	0	0	0	0	0	0	0	0	0	1
+AAW1	AAW1	55	MALE	Alive	1644	Negative	[Unknown]	No History of Primary Risk Factors	G2	T3	N0	M0	Stage III	NO	[Not Applicable]	1644	0	0	0	0	0	0	0	0	1	0	0	0
+AAW2	AAW2	69	MALE	Alive	1505	Negative	[Unknown]	Non-Alcoholic Fatty Liver Disease	G2	T1	N0	M0	Stage I	YES	[Not Applicable]	1505	0	0	0	0	0	0	0	0	0	1	0	0
+AAW3	AAW3	69	MALE	Alive	1451	Negative	[Unknown]	No History of Primary Risk Factors	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	1451	0	0	0	0	0	0	0	0	1	0	0	0
+A459	A459	47	MALE	Alive	7	Positive	Hepatitis B Surface Antigen	[Unknown]	G2	T2	N0	M0	Stage II	NO	[Not Applicable]	7	0	0	0	1	0	0	0	0	0	0	0	0
+A4XI	A4XI	58	MALE	Alive	6	Positive	Hepatitis B Surface Antigen	No History of Primary Risk Factors	G3	T2	N0	M0	Stage II	NO	[Not Applicable]	6	0	0	0	1	0	0	0	0	1	0	0	0
+A5KG	A5KG	60	FEMALE	Alive	6	Positive	Hepatitis B Surface Antigen	No History of Primary Risk Factors	G2	T2	N0	M0	Stage II	NO	[Not Applicable]	6	0	0	0	1	0	0	0	0	1	0	0	0
+A627	A627	74	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G2	T1	NX	M0	Stage I	NO	[Not Applicable]	0	0	0	0	1	0	1	0	1	0	0	0	0
+A66X	A66X	35	MALE	Alive	6	Positive	Hepatitis B Surface Antigen	Alcohol consumption	G3	T3a	N0	M0	Stage III	YES	[Not Applicable]	6	0	0	0	1	0	0	0	1	0	0	0	0
+A66Y	A66Y	51	FEMALE	Alive	7	Positive	Hepatitis B Surface Antigen	No History of Primary Risk Factors	G3	T3a	N0	M0	Stage III	NO	[Not Applicable]	7	0	0	0	1	0	0	0	0	1	0	0	0
+A7PX	A7PX	48	FEMALE	Alive	6	Positive	Hepatitis B Surface Antigen	No History of Primary Risk Factors	G3	T2	NX	M0	Stage II	NO	[Not Applicable]	6	0	0	0	1	0	0	0	0	1	0	0	0
+A7PY	A7PY	20	FEMALE	Alive	6	Positive	Hepatitis B Surface Antigen	No History of Primary Risk Factors	G3	T2	NX	M0	Stage II	NO	[Not Applicable]	6	0	0	0	1	0	0	0	0	1	0	0	0
+A7PZ	A7PZ	61	MALE	Alive	6	Positive	Hepatitis B Surface Antigen	No History of Primary Risk Factors	G2	T2	NX	M0	Stage II	NO	[Not Applicable]	6	0	0	0	1	0	0	0	0	1	0	0	0
+A7XO	A7XO	29	MALE	Alive	6	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	No History of Primary Risk Factors	G2	T3a	N0	M0	Stage III	NO	[Not Applicable]	6	0	0	0	1	0	1	0	0	1	0	0	0
+A7XP	A7XP	53	FEMALE	Alive	6	Positive	Hepatitis B Surface Antigen	No History of Primary Risk Factors	G3	T2	N0	M0	Stage II	NO	[Not Applicable]	6	0	0	0	1	0	0	0	0	1	0	0	0
+A82E	A82E	60	FEMALE	Alive	6	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	No History of Primary Risk Factors	G2	T3a	N0	M0	Stage III	NO	[Not Applicable]	6	0	0	0	1	0	1	0	0	1	0	0	0
+A8O5	A8O5	59	FEMALE	Alive	6	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	No History of Primary Risk Factors	G3	T3a	N0	M0	Stage III	NO	[Not Applicable]	6	0	0	0	1	0	1	0	0	1	0	0	0
+A8O6	A8O6	50	FEMALE	Alive	6	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	No History of Primary Risk Factors	G3	T3a	N0	M0	Stage III	NO	[Not Applicable]	6	0	0	0	1	0	1	0	0	1	0	0	0
+A97K	A97K	54	MALE	Alive	6	Positive	Hepatitis B Surface Antigen	Alcohol consumption	G2	T3a	N0	M0	Stage III	NO	[Not Applicable]	6	0	0	0	1	0	0	0	1	0	0	0	0
+A12J	A12J	62	MALE	Alive	129	Negative	[Not Available]	Hepatitis C	G1	T1	NX	MX	Stage I	[Not Available]	[Not Applicable]	129	0	0	0	0	0	0	0	0	0	0	1	0
+A26S	A26S	70	MALE	Alive	111	Negative	[Not Available]	Alcohol consumption	G2	T1	N0	MX	Stage I	[Not Available]	[Not Applicable]	111	0	0	0	0	0	0	0	1	0	0	0	0
+A2KA	A2KA	52	FEMALE	Alive	111	Negative	[Not Available]	No History of Primary Risk Factors	G3	T3a	NX	MX	Stage III	[Not Available]	[Not Applicable]	111	0	0	0	0	0	0	0	0	1	0	0	0
+A2KB	A2KB	46	FEMALE	Alive	60	Negative	[Not Available]	Hepatitis C	G2	T1	NX	MX	Stage I	[Not Available]	[Not Applicable]	60	0	0	0	0	0	0	0	0	0	0	1	0
+A2KC	A2KC	62	MALE	Dead	19	Negative	[Not Available]	Hepatitis C	G3	T1	NX	MX	Stage I	[Not Available]	19	[Not Available]	0	0	0	0	0	0	0	0	0	0	1	0
+A3JL	A3JL	76	MALE	Alive	97	Negative	[Not Available]	Alcohol consumption	G2	T1	NX	MX	Stage I	[Not Available]	[Not Applicable]	97	0	0	0	0	0	0	0	1	0	0	0	0
+A3RK	A3RK	73	MALE	Alive	13	Negative	[Not Available]	Alcohol consumption	G2	T3a	NX	MX	Stage III	[Not Available]	[Not Applicable]	13	0	0	0	0	0	0	0	1	0	0	0	0
+A2HS	A2HS	80	MALE	Dead	688	Negative	[Not Available]	No History of Primary Risk Factors	G2	T1	NX	MX	Stage I	[Not Available]	688	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A2HT	A2HT	54	MALE	Dead	438	Negative	[Not Available]	Hepatitis C	G2	T1	NX	MX	Stage I	[Not Available]	438	[Not Available]	0	0	0	0	0	0	0	0	0	0	1	0
+A23B	A23B	70	FEMALE	Alive	987	Negative	[Not Available]	Hepatitis C	[Not Available]	T2	N0	M0	Stage II	[Not Available]	[Not Applicable]	987	0	0	0	0	0	0	0	0	0	0	1	0
+A2QQ	A2QQ	80	MALE	Alive	0	Negative	[Not Available]	Alcohol consumption	G2	T1	N0	MX	Stage I	NO	[Not Applicable]	0	0	0	0	0	0	0	0	1	0	0	0	0
+A2QR	A2QR	75	MALE	Dead	581	Negative	[Not Available]	Other	G1	T1	N0	M0	Stage I	[Not Available]	581	[Not Available]	0	0	0	0	0	0	0	0	0	0	0	0
+A3I0	A3I0	76	FEMALE	Alive	6	Negative	[Not Available]	No History of Primary Risk Factors	G2	T2	NX	M0	Stage II	[Not Available]	[Not Applicable]	6	0	0	0	0	0	0	0	0	1	0	0	0
+A3I1	A3I1	81	FEMALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Surface Antibody	Alcohol consumption	G2	T2	N0	MX	Stage II	[Not Available]	[Not Applicable]	0	1	0	0	1	0	1	0	1	0	0	0	0
+A3R2	A3R2	75	MALE	Dead	194	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Surface Antibody	No History of Primary Risk Factors	[Not Available]	T1	NX	MX	Stage I	NO	194	[Not Available]	1	0	0	1	0	1	0	0	1	0	0	0
+A3R3	A3R3	38	FEMALE	Alive	4	Negative	[Not Available]	No History of Primary Risk Factors	G2	T1	NX	MX	Stage I	NO	[Not Applicable]	4	0	0	0	0	0	0	0	0	1	0	0	0
+A495	A495	51	FEMALE	Alive	1	Negative	[Not Available]	Hepatitis C	G2	T2	NX	M0	Stage II	NO	[Not Applicable]	1	0	0	0	0	0	0	0	0	0	0	1	0
+A496	A496	84	FEMALE	Alive	10	Negative	[Not Available]	No History of Primary Risk Factors	G2	T1	NX	M0	Stage I	NO	[Not Applicable]	10	0	0	0	0	0	0	0	0	1	0	0	0
+A4ZP	A4ZP	78	MALE	Alive	1836	Negative	[Not Available]	Alcohol consumption	G2	T3	NX	M0	Stage III	NO	[Not Applicable]	1836	0	0	0	0	0	0	0	1	0	0	0	0
+A4ZQ	A4ZQ	52	MALE	Alive	12	Negative	Hepatitis C Virus RNA	Hepatitis C	G2	T1	NX	M0	Stage I	NO	[Not Applicable]	12	0	0	1	0	0	0	0	0	0	0	1	0
+A25S	A25S	64	MALE	Alive	37	Negative	[Not Available]	Alcohol consumption	G2	T1	N0	M0	Stage I	[Not Available]	[Not Applicable]	37	0	0	0	0	0	0	0	1	0	0	0	0
+A25T	A25T	45	FEMALE	Alive	1175	Negative	[Not Available]	Hepatitis C	G2	T3	N0	M0	Stage III	[Not Available]	[Not Applicable]	1175	0	0	0	0	0	0	0	0	0	0	1	0
+A25U	A25U	63	FEMALE	Alive	1231	Negative	[Not Available]	Hepatitis B	G3	T1	N0	M0	Stage I	[Not Available]	[Not Applicable]	1231	0	0	0	0	0	0	0	0	0	0	0	1
+A25V	A25V	68	MALE	Alive	69	Negative	[Not Available]	Alcohol consumption	G2	T1	N0	M0	Stage I	[Not Available]	[Not Applicable]	69	0	0	0	0	0	0	0	1	0	0	0	0
+A25W	A25W	79	FEMALE	Alive	391	Negative	[Not Available]	No History of Primary Risk Factors	G2	T3b	N0	M0	Stage III	[Not Available]	[Not Applicable]	391	0	0	0	0	0	0	0	0	1	0	0	0
+A25X	A25X	73	MALE	Alive	1359	Negative	[Not Available]	Hepatitis B	G3	T2	N0	M0	Stage II	[Not Available]	[Not Applicable]	1359	0	0	0	0	0	0	0	0	0	0	0	1
+A25Y	A25Y	52	FEMALE	Dead	452	Negative	[Not Available]	Hepatitis B	G3	T1	N0	M0	Stage I	[Not Available]	452	[Not Available]	0	0	0	0	0	0	0	0	0	0	0	1
+A25Z	A25Z	58	MALE	Alive	269	Negative	[Not Available]	Hepatitis B	G2	T1	N0	M0	Stage I	[Not Available]	[Not Applicable]	269	0	0	0	0	0	0	0	0	0	0	0	1
+A3CG	A3CG	80	MALE	Alive	254	Negative	[Not Available]	Hepatitis C	G2	T1	N0	M0	Stage I	[Not Available]	[Not Applicable]	254	0	0	0	0	0	0	0	0	0	0	1	0
+A3CH	A3CH	53	MALE	Alive	193	Negative	[Not Available]	Hepatitis B	G2	T3a	N0	M0	Stage III	[Not Available]	[Not Applicable]	193	0	0	0	0	0	0	0	0	0	0	0	1
+A3CI	A3CI	71	MALE	Alive	180	Negative	[Not Available]	Non-Alcoholic Fatty Liver Disease	G2	T1	N0	M0	Stage I	[Not Available]	[Not Applicable]	180	0	0	0	0	0	0	0	0	0	1	0	0
+A3CJ	A3CJ	52	MALE	Alive	136	Negative	[Not Available]	Hepatitis C	G2	T2	N0	M0	Stage II	[Not Available]	[Not Applicable]	136	0	0	0	0	0	0	0	0	0	0	1	0
+A3CK	A3CK	61	MALE	Alive	27	Negative	[Not Available]	Hepatitis B	G2	T1	N0	M0	Stage I	[Not Available]	[Not Applicable]	27	0	0	0	0	0	0	0	0	0	0	0	1
+A5SI	A5SI	44	MALE	Alive	447	Negative	[Not Available]	Hepatitis C	G2	T2	N0	M0	Stage II	YES	[Not Applicable]	447	0	0	0	0	0	0	0	0	0	0	1	0
+A5SJ	A5SJ	59	MALE	Alive	364	Negative	[Not Available]	Alcohol consumption|Hepatitis C	G2	T1	NX	M0	Stage I	YES	[Not Applicable]	364	0	0	0	0	0	0	0	1	0	0	1	0
+A5SK	A5SK	58	MALE	Alive	302	Negative	[Not Available]	Hepatitis C	G1	T1	NX	M0	Stage I	NO	[Not Applicable]	302	0	0	0	0	0	0	0	0	0	0	1	0
+A5SL	A5SL	70	MALE	Alive	243	Negative	[Not Available]	Alcohol consumption	G2	T2	NX	M0	Stage II	NO	[Not Applicable]	243	0	0	0	0	0	0	0	1	0	0	0	0
+A5SM	A5SM	58	MALE	Alive	133	Negative	[Not Available]	Alcohol consumption|Hepatitis C	G3	T2	NX	M0	Stage II	NO	[Not Applicable]	133	0	0	0	0	0	0	0	1	0	0	1	0
+A6UC	A6UC	65	MALE	Alive	236	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Surface Antibody	Alcohol consumption	G2	T3b	N0	M0	Stage III	NO	[Not Applicable]	236	1	0	0	1	0	1	0	1	0	0	0	0
+A7M5	A7M5	76	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Surface Antibody	Alcohol consumption	G2	T1	NX	MX	Stage I	NO	[Not Applicable]	0	1	0	0	1	0	1	0	1	0	0	0	0
+A7M6	A7M6	60	FEMALE	Alive	366	Negative	[Unknown]	Hepatitis C	G3	T1	NX	MX	Stage I	YES	[Not Applicable]	366	0	0	0	0	0	0	0	0	0	0	1	0
+A7M7	A7M7	65	MALE	Alive	182	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Alcohol consumption	G1	T1	NX	MX	Stage I	NO	[Not Applicable]	182	0	0	0	1	0	1	0	1	0	0	0	0
+A7M8	A7M8	31	MALE	Alive	0	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Surface Antibody	Alcohol consumption	G1	T1	NX	MX	Stage I	NO	[Not Applicable]	0	1	0	0	1	0	1	0	1	0	0	0	0
+A7M9	A7M9	70	MALE	Dead	56	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Surface Antibody	Hemochromatosis	G2	T3b	NX	MX	Stage III	NO	56	[Not Available]	1	0	0	1	0	1	0	0	0	0	0	0
+AAUZ	AAUZ	48	MALE	Alive	342	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Surface Antibody|HBV DNA	Hepatitis B|Non-Alcoholic Fatty Liver Disease	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	342	1	1	0	1	0	1	0	0	0	1	0	1
+AAV0	AAV0	58	MALE	Alive	260	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Surface Antibody	Hepatitis B	G2	T1	N0	M0	Stage I	NO	[Not Applicable]	260	1	0	0	1	0	1	0	0	0	0	0	1
+AAV1	AAV1	51	MALE	Dead	359	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Surface Antibody|HBV DNA	Hepatitis B	G3	T4	N0	M0	Stage III	YES	359	[Not Available]	1	1	0	1	0	1	0	0	0	0	0	1
+AAV2	AAV2	50	MALE	Alive	295	Positive	Hepatitis  C Antibody|Hepatitis C Virus RNA|Hepatitis B Surface Antigen|HBV Surface Antibody	Alcohol consumption|Hepatitis C	G1	T1	N0	M0	Stage I	NO	[Not Applicable]	295	1	0	1	1	0	1	0	1	0	0	1	0
+AAV3	AAV3	58	FEMALE	Alive	279	Negative	[Unknown]	Alcohol consumption|Hepatitis C|Non-Alcoholic Fatty Liver Disease	G2	T2	N0	M0	Stage II	NO	[Not Applicable]	279	0	0	0	0	0	0	0	1	0	1	1	0
+AAV4	AAV4	83	FEMALE	Dead	27	Negative	[Unknown]	Hepatitis B	G1	T1	N0	M0	Stage I	NO	27	[Not Available]	0	0	0	0	0	0	0	0	0	0	0	1
+AAV5	AAV5	67	MALE	Alive	266	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Surface Antibody|HBV Core Antibody	Alcohol consumption	G2	T2	N0	M0	Stage II	YES	[Not Applicable]	266	1	0	0	1	1	1	0	1	0	0	0	0
+AAV6	AAV6	53	FEMALE	Dead	65	Positive	Hepatitis B Surface Antigen	No History of Primary Risk Factors	G3	T3a	N0	M0	Stage III	YES	65	[Not Available]	0	0	0	1	0	0	0	0	1	0	0	0
+AAV7	AAV7	38	MALE	Alive	92	Positive	Hepatitis B Surface Antigen|HBV Surface Antibody|HBV DNA	Hepatitis B	G2	T2	N0	M0	Stage II	NO	[Not Applicable]	92	1	1	0	1	0	0	0	0	0	0	0	1
+A3OU	A3OU	59	MALE	Alive	697	Negative	Hepatitis  C Antibody	Alcohol consumption|Non-Alcoholic Fatty Liver Disease|Other	G2	T1	NX	MX	Stage I	NO	[Not Applicable]	697	0	0	0	0	0	1	0	1	0	1	0	0
+A6C0	A6C0	75	FEMALE	Dead	31	Negative	[Not Available]	No History of Primary Risk Factors	G2	T2	NX	MX	Stage II	NO	31	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A9DB	A9DB	68	MALE	Dead	67	Negative	[Not Available]	No History of Primary Risk Factors	G2	T1	N0	MX	Stage I	NO	67	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A5MZ	A5MZ	78	MALE	Dead	91	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Surface Antibody	No History of Primary Risk Factors	G2	T1	NX	M0	Stage I	NO	91	[Not Available]	1	0	0	1	0	1	0	0	1	0	0	0
+A5N0	A5N0	90	FEMALE	Dead	752	Negative	[Unknown]	No History of Primary Risk Factors	[Not Available]	TX	NX	M0	[Not Available]	YES	752	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A5RF	A5RF	64	MALE	Alive	240	Negative	Hepatitis C Virus RNA	Hepatitis C	G1	T1	NX	MX	Stage I	YES	[Not Applicable]	240	0	0	1	0	0	0	0	0	0	0	1	0
+A5RG	A5RG	66	MALE	Alive	120	Negative	HCV Genotype	Alcohol consumption|Hepatitis C	G1	T1	NX	MX	Stage I	NO	[Not Applicable]	120	0	0	0	0	0	0	1	1	0	0	1	0
+A6G5	A6G5	66	MALE	Alive	122	Negative	HCV Genotype	Alcohol consumption|Hepatitis B|Hepatitis C|Hemochromatosis	G2	T1	N0	MX	Stage I	NO	[Not Applicable]	122	0	0	0	0	0	0	1	1	0	0	1	1
+AAU7	AAU7	61	MALE	Alive	113	Negative	[Unknown]	Hepatitis C|Hemochromatosis	G2	T2a	NX	MX	Stage II	YES	[Not Applicable]	113	0	0	0	0	0	0	0	0	0	0	1	0
+A7K0	A7K0	65	MALE	Dead	65	Negative	Hepatitis  C Antibody	Alcohol consumption|Hepatitis C	G1	T1	N0	M0	Stage I	NO	65	[Not Available]	0	0	0	0	0	1	0	1	0	0	1	0
+A7K2	A7K2	64	MALE	Alive	360	Negative	HCV Genotype	Hepatitis C	G1	T1	N0	M0	Stage I	NO	[Not Applicable]	360	0	0	0	0	0	0	1	0	0	0	1	0
+A7K7	A7K7	61	FEMALE	Alive	407	Negative	[Unknown]	No History of Primary Risk Factors	G1	T2	N0	M0	Stage II	YES	[Not Applicable]	407	0	0	0	0	0	0	0	0	1	0	0	0
+A7K8	A7K8	57	MALE	Alive	741	Negative	[Unknown]	No History of Primary Risk Factors	G1	T1	N0	M0	Stage I	NO	[Not Applicable]	741	0	0	0	0	0	0	0	0	1	0	0	0
+A6GG	A6GG	79	FEMALE	Alive	15	Negative	[Not Available]	Other	G2	T2	NX	M0	Stage II	NO	[Not Applicable]	15	0	0	0	0	0	0	0	0	0	0	0	0
+A9QC	A9QC	48	MALE	Alive	180	Negative	[Not Available]	No History of Primary Risk Factors	G2	T1	NX	M0	Stage I	NO	[Not Applicable]	180	0	0	0	0	0	0	0	0	1	0	0	0
+A9QD	A9QD	68	MALE	Alive	130	Negative	[Not Available]	No History of Primary Risk Factors	G2	T3a	N0	M0	Stage III	NO	[Not Applicable]	130	0	0	0	0	0	0	0	0	1	0	0	0
+A75C	A75C	64	MALE	Alive	291	Negative	HBV Surface Antibody	Hepatitis C	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	291	1	0	0	0	0	0	0	0	0	0	1	0
+A75E	A75E	61	MALE	Alive	155	Negative	HCV Genotype	Alcohol consumption|Hepatitis C	G2	T4	N0	M0	Stage III	NO	[Not Applicable]	155	0	0	0	0	0	0	1	1	0	0	1	0
+A75G	A75G	63	MALE	Alive	433	Negative	HCV Genotype	Alcohol consumption|Hepatitis C	G2	T2	N0	M0	Stage II	NO	[Not Applicable]	433	0	0	0	0	0	0	1	1	0	0	1	0
+A75H	A75H	77	MALE	Alive	391	Negative	HCV Genotype	Hepatitis C	[Not Available]	[Not Available]	NX	MX	[Not Available]	YES	[Not Applicable]	391	0	0	0	0	0	0	1	0	0	0	1	0
+A75I	A75I	61	MALE	Alive	265	Negative	[Unknown]	Hepatitis C	G1	T2	NX	MX	[Not Available]	YES	[Not Applicable]	265	0	0	0	0	0	0	0	0	0	0	1	0
+A520	A520	58	MALE	Alive	19	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Core Antibody	Other	G1	T1	NX	MX	Stage I	[Not Available]	[Not Applicable]	19	0	0	0	1	1	1	0	0	0	0	0	0
+A8JO	A8JO	34	MALE	Alive	52	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Core Antibody	Alcohol consumption	G3	T1	N0	MX	Stage I	NO	[Not Applicable]	52	0	0	0	1	1	1	0	1	0	0	0	0
+A4U2	A4U2	71	MALE	Dead	1791	Negative	[Unknown]	Alcohol consumption	G1	T3	NX	MX	Stage III	YES	1791	[Not Available]	0	0	0	0	0	0	0	1	0	0	0	0
+A8LF	A8LF	74	MALE	Alive	498	Negative	[Unknown]	Alcohol consumption	G3	T1	NX	MX	Stage I	NO	[Not Applicable]	498	0	0	0	0	0	0	0	1	0	0	0	0
+A75V	A75V	54	MALE	Alive	135	Negative	[Unknown]	Alcohol consumption|Hepatitis B|Hepatitis C	G2	T1	NX	MX	Stage I	NO	[Not Applicable]	135	0	0	0	0	0	0	0	1	0	0	1	1
+A5DF	A5DF	58	FEMALE	Dead	639	Negative	[Unknown]	No History of Primary Risk Factors	G2	T4	N0	M0	Stage III	NO	639	[Not Available]	0	0	0	0	0	0	0	0	1	0	0	0
+A7B7	A7B7	48	MALE	Alive	62	Negative	[Unknown]	Hepatitis B	G2	T2	NX	MX	Stage II	NO	[Not Applicable]	62	0	0	0	0	0	0	0	0	0	0	0	1
+A6M3	A6M3	24	MALE	Alive	0	Negative	[Not Available]	[Unknown]	G3	T2	N0	M0	Stage II	[Unknown]	[Not Applicable]	0	0	0	0	0	0	0	0	0	0	0	0	0
+A6M4	A6M4	74	FEMALE	Alive	22	Negative	[Not Available]	No History of Primary Risk Factors	G2	T3	NX	MX	Stage III	[Unknown]	[Not Applicable]	22	0	0	0	0	0	0	0	0	1	0	0	0
+A6M5	A6M5	20	FEMALE	Alive	15	Negative	[Not Available]	No History of Primary Risk Factors	G2	T1	N1	M0	Stage IV	[Unknown]	[Not Applicable]	15	0	0	0	0	0	0	0	0	1	0	0	0
+A6M6	A6M6	75	MALE	Alive	9	Negative	[Not Available]	Alcohol consumption	G3	T2	NX	M0	Stage II	[Unknown]	[Not Applicable]	9	0	0	0	0	0	0	0	1	0	0	0	0
+A7S9	A7S9	47	FEMALE	Alive	640	Negative	[Not Available]	Hepatitis B	G3	T1	N0	M0	Stage I	NO	[Not Applicable]	640	0	0	0	0	0	0	0	0	0	0	0	1
+A7SB	A7SB	53	MALE	Alive	588	Negative	[Not Available]	Hepatitis B	G2	T2	N0	M0	Stage II	NO	[Not Applicable]	588	0	0	0	0	0	0	0	0	0	0	0	1
+A7SF	A7SF	66	MALE	Alive	579	Negative	[Not Available]	Hepatitis C	G2	T1	N0	M0	Stage I	YES	[Not Applicable]	579	0	0	0	0	0	0	0	0	0	0	1	0
+A7SH	A7SH	42	MALE	Alive	468	Negative	[Not Available]	Hepatitis B	G3	T2	N0	M0	Stage II	YES	[Not Applicable]	468	0	0	0	0	0	0	0	0	0	0	0	1
+A7SK	A7SK	59	MALE	Alive	472	Negative	[Not Available]	Hepatitis C	G3	T1	N0	M0	Stage I	YES	[Not Applicable]	472	0	0	0	0	0	0	0	0	0	0	1	0
+A7D4	A7D4	69	MALE	Alive	734	Negative	Hepatitis  C Antibody	Hepatitis C	G2	T2	N0	M0	Stage II	NO	[Not Applicable]	734	0	0	0	0	0	1	0	0	0	0	1	0
+A6J8	A6J8	68	MALE	Alive	23	Negative	[Unknown]	Alcohol consumption	G2	T1	NX	M0	[Not Available]	[Unknown]	[Not Applicable]	23	0	0	0	0	0	0	0	1	0	0	0	0
+A7MA	A7MA	62	FEMALE	Alive	455	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Core Antibody	No History of Primary Risk Factors	G2	T2b	N0	M0	Stage II	YES	[Not Applicable]	455	0	0	0	1	1	1	0	0	1	0	0	0
+A7MB	A7MB	24	MALE	Alive	526	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Core Antibody	No History of Primary Risk Factors	G3	T2	NX	MX	Stage II	YES	[Not Applicable]	526	0	0	0	1	1	1	0	0	1	0	0	0
+A7MC	A7MC	59	MALE	Alive	438	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV DNA	Alcohol consumption|Hepatitis B	G3	T3a	N0	MX	Stage III	[Unknown]	[Not Applicable]	438	0	1	0	1	0	1	0	1	0	0	0	1
+A7MD	A7MD	67	MALE	Dead	52	Positive	Hepatitis  C Antibody|Hepatitis C Virus RNA|HCV Genotype|Hepatitis B Surface Antigen	Alcohol consumption|Hepatitis C	G3	T1	N0	MX	Stage I	NO	52	[Not Available]	0	0	1	1	0	1	1	1	0	0	1	0
+A7ME	A7ME	51	MALE	Alive	486	Positive	Hepatitis B Surface Antigen|HBV Core Antibody|HBV DNA	Hepatitis B	G2	T1	NX	MX	Stage I	NO	[Not Applicable]	486	0	1	0	1	1	0	0	0	0	0	0	1
+A7MF	A7MF	56	MALE	Dead	214	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Core Antibody|HBV DNA	Hepatitis B|Hepatitis C	G2	T3a	NX	MX	Stage III	YES	214	[Not Available]	0	1	0	1	1	1	0	0	0	0	1	1
+AA0U	AA0U	60	MALE	Alive	253	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Core Antibody	Non-Alcoholic Fatty Liver Disease	G2	T2	NX	MX	Stage II	YES	[Not Applicable]	253	0	0	0	1	1	1	0	0	0	1	0	0
+AA0V	AA0V	69	FEMALE	Alive	139	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Core Antibody	Hemochromatosis	G1	[Discrepancy]	NX	MX	Stage I	NO	[Not Applicable]	139	0	0	0	1	1	1	0	0	0	0	0	0
+A86L	A86L	68	FEMALE	Alive	31	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen|HBV Surface Antibody	No History of Primary Risk Factors	G2	T1	NX	MX	Stage I	NO	[Not Applicable]	31	1	0	0	1	0	1	0	0	1	0	0	0
+A9G7	A9G7	71	FEMALE	Alive	30	Negative	[Unknown]	No History of Primary Risk Factors	G3	T3a	NX	M0	[Not Available]	NO	[Not Applicable]	30	0	0	0	0	0	0	0	0	1	0	0	0
+AB4B	AB4B	62	MALE	Alive	122	Negative	[Unknown]	Alcohol consumption|Non-Alcoholic Fatty Liver Disease|Other	G2	T2	NX	M0	Stage II	NO	[Not Applicable]	122	0	0	0	0	0	0	0	1	0	1	0	0
+AA44	AA44	64	FEMALE	Alive	473	Negative	Hepatitis  C Antibody	Non-Alcoholic Fatty Liver Disease	G3	T1	NX	MX	Stage I	YES	[Not Applicable]	473	0	0	0	0	0	1	0	0	0	1	0	0
+AA46	AA46	61	MALE	Alive	553	Negative	Hepatitis  C Antibody	No History of Primary Risk Factors	G1	T2	NX	MX	Stage II	NO	[Not Applicable]	553	0	0	0	0	0	1	0	0	1	0	0	0
+AA47	AA47	33	FEMALE	Dead	556	Negative	Hepatitis  C Antibody	No History of Primary Risk Factors	G2	T3a	NX	MX	Stage III	YES	556	[Not Available]	0	0	0	0	0	1	0	0	1	0	0	0
+A8TC	A8TC	43	FEMALE	Alive	1339	Negative	[Not Available]	Hepatitis B	G2	T1	NX	MX	Stage I	NO	[Not Applicable]	1339	0	0	0	0	0	0	0	0	0	0	0	1
+A8TD	A8TD	49	FEMALE	Alive	1030	Negative	[Not Available]	No History of Primary Risk Factors	G3	T3	N0	M0	Stage III	NO	[Not Applicable]	1030	0	0	0	0	0	0	0	0	1	0	0	0
+A8TE	A8TE	16	MALE	Alive	925	Negative	[Not Available]	No History of Primary Risk Factors	G1	T3	N0	MX	Stage III	YES	[Not Applicable]	925	0	0	0	0	0	0	0	0	1	0	0	0
+A8TF	A8TF	74	MALE	Dead	693	Negative	[Not Available]	Hepatitis B	G1	T1	NX	MX	Stage I	YES	693	[Not Available]	0	0	0	0	0	0	0	0	0	0	0	1
+A8TG	A8TG	58	MALE	Alive	867	Negative	[Not Available]	Hepatitis C	G2	T1	NX	M0	Stage I	YES	[Not Applicable]	867	0	0	0	0	0	0	0	0	0	0	1	0
+A8S7	A8S7	68	MALE	Dead	412	Negative	[Unknown]	Hepatitis C	G3	T3a	N0	MX	Stage III	YES	412	[Not Available]	0	0	0	0	0	0	0	0	0	0	1	0
+A9CV	A9CV	59	MALE	Alive	142	Negative	[Unknown]	Alcohol consumption|Hepatitis C	G1	T1	NX	MX	[Not Available]	NO	[Not Applicable]	142	0	0	0	0	0	0	0	1	0	0	1	0
+A9CY	A9CY	66	FEMALE	Alive	782	Negative	[Unknown]	Non-Alcoholic Fatty Liver Disease	G1	T1	NX	MX	[Not Available]	NO	[Not Applicable]	782	0	0	0	0	0	0	0	0	0	1	0	0
+A9CZ	A9CZ	72	MALE	Alive	706	Positive	Hepatitis B Surface Antigen	Hepatitis B	G1	T1	NX	MX	[Not Available]	NO	[Not Applicable]	706	0	0	0	1	0	0	0	0	0	0	0	1
+A9D0	A9D0	67	FEMALE	Alive	717	Negative	[Unknown]	Non-Alcoholic Fatty Liver Disease	G1	T1	NX	MX	[Not Available]	NO	[Not Applicable]	717	0	0	0	0	0	0	0	0	0	1	0	0
+A9D1	A9D1	56	FEMALE	Alive	21	Negative	[Unknown]	Non-Alcoholic Fatty Liver Disease	G2	T1	NX	MX	[Not Available]	NO	[Not Applicable]	21	0	0	0	0	0	0	0	0	0	1	0	0
+A9D2	A9D2	51	MALE	Alive	743	Negative	Hepatitis C Virus RNA	Hepatitis C	G2	T2	NX	MX	[Not Available]	YES	[Not Applicable]	743	0	0	1	0	0	0	0	0	0	0	1	0
+A9D4	A9D4	64	FEMALE	Alive	395	Negative	[Unknown]	No History of Primary Risk Factors	G1	T1	NX	MX	[Not Available]	NO	[Not Applicable]	395	0	0	0	0	0	0	0	0	1	0	0	0
+A9CD	A9CD	73	MALE	Dead	1386	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	[Unknown]	G2	T2	NX	MX	Stage II	YES	1386	[Not Available]	0	0	0	1	0	1	0	0	0	0	0	0
+A9CE	A9CE	79	FEMALE	Alive	1066	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	[Unknown]	G1	T2	NX	MX	Stage II	YES	[Not Applicable]	1066	0	0	0	1	0	1	0	0	0	0	0	0
+A9CF	A9CF	64	MALE	Alive	2258	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	Hemochromatosis	G2	T2	NX	MX	Stage II	YES	[Not Applicable]	2258	0	0	0	1	0	1	0	0	0	0	0	0
+A9CG	A9CG	55	MALE	Alive	250	Positive	Hepatitis  C Antibody|Hepatitis B Surface Antigen	[Unknown]	G2	T2	NX	MX	Stage II	NO	[Not Applicable]	250	0	0	0	1	0	1	0	0	0	0	0	0

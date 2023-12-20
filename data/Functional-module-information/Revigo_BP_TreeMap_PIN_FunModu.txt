@@ -1,0 +1,10 @@
+TermID,Name,Frequency,Value,Uniqueness,Dispensability,Representative
+GO:0042098,T cell proliferation,0.009313306,25,0.680782141,0.02542131,null
+GO:0002456,T cell mediated immunity,0.003582297,16,0.66845107,0.56773359,T cell proliferation
+GO:0019885,antigen processing and presentation of endogenous peptide antigen via MHC class I,0.002950322,6,0.63085947,0.56773359,T cell proliferation
+GO:0071345,cellular response to cytokine stimulus,0.188950348,66,0.951475951,0,null
+GO:1903037,regulation of leukocyte cell-cell adhesion,0.044188311,32,0.741645507,0,null
+GO:0002690,positive regulation of leukocyte chemotaxis,0.013490989,17,0.440080189,0.68412913,regulation of leukocyte cell-cell adhesion
+GO:0002822,regulation of adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains,0.019145496,16,0.435456667,0.63256324,regulation of leukocyte cell-cell adhesion
+GO:0050670,regulation of lymphocyte proliferation,0.031715133,29,0.338110192,0.17256149,regulation of leukocyte cell-cell adhesion
+GO:1902107,positive regulation of leukocyte differentiation,0.019544638,17,0.440080189,0.63256324,regulation of leukocyte cell-cell adhesion
