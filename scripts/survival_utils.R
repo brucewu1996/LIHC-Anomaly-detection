@@ -2,7 +2,6 @@ library(survival)
 library(survminer)
 library(stringr)
 
-
 survival_analysis<-function(survival_info,fig_prefix,km_col='risk',km_labels=c("Low risk", "High risk")){
   
   survival_input = read.table(survival_info,header = T,row.names = 1,sep = '\t')
@@ -38,9 +37,28 @@ survival_analysis<-function(survival_info,fig_prefix,km_col='risk',km_labels=c("
   return(list(forest_plot,kmplot,summary(model),logrank_pv))
 }
 
-survival_analysis_v2<-function(clinical_info,exp_m,fig_prefix,risk_score_mode=TRUE,confounding_factor = c("Gender","Age","Stage"),
-                               km_col='risk',km_labels=c("Low risk", "High risk")){
-  
+survival_analysis_v2<-function(clinical_info,exp_m,fig_title,
+                               risk_score_mode=TRUE,
+                               confounding_factor = c("Gender","Age","Stage"),
+                               km_col='risk',
+                               km_labels=c("Low risk", "High risk")){
+  # Survival analysis for module genes expression profile.
+  # Args:
+  #       clinical_info (data.frame): Table including patients clinical information including : age, gender, stage, survival time, survival status.
+  #       exp_m (data.frame): Normalized expression matrix of module genes. The default normalization method is zscore normalization (Standardization)
+  #       fig_title (str): The fig title of forest plot / KM survival curve.
+  #       risk_score_mode (Boolean, optional): The boolean of risk score mode, if TRUE, the gene expression will be summarized into patient risk score by the expression matrix only Cox model. Defaults to TRUE.
+  #       confounding_factor (character, optional): The columns of confounding factors. Defaults to c("Gender","Age","Stage").
+  #       km_col (str, optional): The group colname for KM-survival curve. Defaults to 'risk'.
+  #       km_labels (character, optional): The group legend in KM-survival curve. Defaults to c("Low risk", "High risk").
+  # 
+  # Returns:
+  #     A list including following information :
+  #       
+  #     1. forest plot ggplot2 object. 
+  #     2. KM-survival curve ggplot2 object
+  #     3. Cox regression model summary (summary.coxph).
+
   #clinical_info = read.table(clinical_path,header = T,row.names = 1,sep = '\t')
   clinical_info = clinical_info[,c("Survival_day","Status",confounding_factor)]
   #exp_m = read.table(exp_path,header = T,row.names = 1,sep = '\t')
@@ -65,7 +83,7 @@ survival_analysis_v2<-function(clinical_info,exp_m,fig_prefix,risk_score_mode=TR
   }
   model_v2 <- coxph(total_fmla,data = survival_v2)
   ## Visualization cox result
-  forest_plot = ggforest(model_v2,main=fig_prefix,data=survival_v2)
+  forest_plot = ggforest(model_v2,main=fig_title,data=survival_v2)
   km_fmla = as.formula(paste0("Surv(Survival_day, Status) ~ ",km_col))
   #fit <- do.call(surfit, args = list(formula = fmla, data = survival_input))
   km_survival = data.frame(survival_v2)
@@ -77,7 +95,7 @@ survival_analysis_v2<-function(clinical_info,exp_m,fig_prefix,risk_score_mode=TR
                       # Add risk table
                       risk.table = TRUE,
                       tables.height = 0.2,
-                      palette = c("#98EECC", "#FEA1A1")) + ggtitle(fig_prefix)
+                      palette = c("#98EECC", "#FEA1A1")) + ggtitle(fig_title)
   return(list(forest_plot,kmplot,summary(model)))
 }
 

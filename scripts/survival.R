@@ -22,8 +22,10 @@ for (condition in c("HBV","non-HBV")){
       confounding_factor = c("Age")
       clinical_info = survival_input[,c("Survival_day","Status","Gender","Age","Stage")]
       exp_m = survival_input[,gene_list]
+      #Extract the basename of survival input, the example of survival input filename : GO:0045824_negative-regulation-of-innate-immune-response.txt
       prefix = substr(module,1,nchar(module)-4)
       try({
+        #fig title = strsplit(prefix,'_')[[1]][2], it will be the description of GO term.
         res = survival_analysis_v2(clinical_info,exp_m,strsplit(prefix,'_')[[1]][2],
                                    confounding_factor = confounding_factor,risk_score_mode = FALSE)
         forest_plot = res[1][[1]]
