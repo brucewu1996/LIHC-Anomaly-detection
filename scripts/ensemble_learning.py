@@ -1,15 +1,12 @@
 import numpy as np
 import pandas as pd
-import random
-import argparse
-import os
+import random,os,pickle
 from re import search
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn.metrics import confusion_matrix,precision_score,roc_auc_score,recall_score
 import multiprocessing as mp
-
 
 def standardization(df) :
     '''
@@ -26,6 +23,21 @@ def npv(y_true,y_pred) :
     npv = tn / (tn+fn)
     return npv
 
+class ensemble_learning_result:
+
+    def __init__(self,hallmark_ens_list,hallmark_gene_symbol,gene_list):
+        self.hallmark_gene = hallmark_ens_list
+        self.hallmark_gene_symbol = hallmark_gene_symbol
+        self.gene_list = gene_list
+        self.hallmark_coversion_dict = dict(zip(self.hallmark_gene,self.hallmark_gene_symbol))
+        self.svm_vote_result = None
+
+    def generate_gene_vote_number(self) :
+        if not self.svm_vote_result :
+            return 
+        self.vote_result = dict(zip(self.gene_list,self.svm_vote_result))
+
+
 class svm_ensemble_learning() :
     def __init__(self,all_m,y_all,y_hallmark,r = 1,run = 1000,t = 20):
         self.overall_matrix = all_m
@@ -34,16 +46,19 @@ class svm_ensemble_learning() :
         self.ratio = r
         self.run = run
         self.threads = t
+        '''
         pos_idx = self.y_overall == 1
         hallmark_idx = self.y_hallmark == 1
         n_idx = self.y_overall == 0
-        self.positive_matrix = self.overall_matrix[pos_idx,:]
-        self.hallmark_matrix = self.overall_matrix[hallmark_idx,:]
-        self.negative_matrix = self.overall_matrix[n_idx,:]
+        '''
+        self.positive_matrix = self.overall_matrix[self.y_overall == 1,:]
+        self.hallmark_matrix = self.overall_matrix[self.y_hallmark == 1,:]
+        self.negative_matrix = self.overall_matrix[self.y_overall == 0,:]
         
     def single_svm(self,n) :
         population = range(self.negative_matrix.shape[0])
-        n_sample = self.ratio * self.positive_matrix.shape[0]
+        # number of negative sample is required
+        n_sample = self.ratio * self.positive_matrix.shape[0] 
         idx = random.sample(population,n_sample)
         negative = self.negative_matrix[idx,:]
         positive = self.positive_matrix
@@ -53,22 +68,25 @@ class svm_ensemble_learning() :
         x_train,x_test,y_train,y_test = train_test_split(X,y,test_size = 0.2,stratify = y)
         svm = SVC(kernel='linear')
         svm.fit(x_train,y_train)
-        y_pred_overall = svm.predict(self.overall_matrix)
+        # svm predict gene is hallmark or not, it is vote number 
         y_pred = svm.predict(x_test)
-        #metric
+        y_pred_overall = svm.predict(self.overall_matrix)
+        vote = y_pred_overall
+        # metric
+        # precision = test dataset (20% of training)
+        # precision_overall = entire expression matrix
         precision = precision_score(y_test,y_pred)
         precision_overall = precision_score(self.y_overall,y_pred_overall)
         recall = recall_score(y_test,y_pred)
         recall_overall = recall_score(self.y_overall,y_pred_overall)
         coef = svm.coef_[0]
         #hallmark metric 
-        hallmark = self.hallmark_matrix
-        hallmark_n = self.negative_matrix
-        hallmark_x = np.concatenate((np.array(hallmark),np.array(negative)))
-        hallmark_y = np.concatenate((np.repeat(1,hallmark.shape[0]),np.repeat(0,negative.shape[0])))
-        hallmark_overall = np.concatenate((np.array(hallmark),np.array(hallmark_n)))
-        hallmark_yoverall = np.concatenate((np.repeat(1,hallmark.shape[0]),np.repeat(0,hallmark_n.shape[0])))
-
+        hallmark_x = np.concatenate((np.array(self.hallmark_matrix),np.array(negative)))
+        hallmark_y = np.concatenate((np.repeat(1,self.hallmark_matrix.shape[0]),np.repeat(0,negative.shape[0])))
+        hallmark_overall = np.concatenate((np.array(self.hallmark_matrix),np.array(self.negative_matrix)))
+        hallmark_yoverall = np.concatenate((np.repeat(1,self.hallmark_matrix.shape[0]),np.repeat(0,self.negative_matrix.shape[0])))
+        # hallmark = hallmark gene + training negative genes
+        # hallmark overall = hallmark gene+ entire non-hallmark gene (not include the synthetic data)
         hallmark_pred_overall = svm.predict(hallmark_overall)
         hallmark_pred = svm.predict(hallmark_x)
 
@@ -77,7 +95,7 @@ class svm_ensemble_learning() :
         recall_hallmark = recall_score(hallmark_y,hallmark_pred)
         recall_overall_hallmark = recall_score(hallmark_yoverall,hallmark_pred_overall)
 
-        return y_pred_overall,precision,precision_overall,recall,recall_overall,coef,precision_hallmark,precision_overall_hallmark,recall_hallmark,recall_overall_hallmark
+        return vote,coef,precision,precision_overall,recall,recall_overall,precision_hallmark,precision_overall_hallmark,recall_hallmark,recall_overall_hallmark
 
     def ensemble_svm(self) :
         pool = mp.Pool(self.threads)
@@ -97,33 +115,30 @@ def vote_for_ensemble(result,threshold) :
     return vote
 
 def main() :
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-e", "--input",help="path of expression profile")
-    #parser.add_argument("-s", "--synthetic",help="path of synthetic data")
-    parser.add_argument("-c", "--ens_list",help="path of hallmark gene ens id")
-    parser.add_argument("-r", "--run",type=int,help="number of svm for an ensemble model")
-    parser.add_argument("-t", "--threads",type=int,help="number of threads to use")
-    parser.add_argument("-o","--output_path",help = 'path of ensemble model output')
-    parser.add_argument("-p","--prefix",type=str,help="prefix of metric output file")
-    parser.add_argument("--stand",type=bool,default=False,help = "Standardziation of not,if standardzied choose False")
-    args = parser.parse_args()
-
-    hallmark_list = pd.read_csv(args.ens_list,sep = '\t')
-    exp_df = pd.read_csv(args.input,sep = '\t',index_col=0)
-    #syn_df = pd.read_csv(args.synthetic,sep = '\t',index_col=0)
-    #exp_df = pd.concat([exp_df,syn_df],axis=0)
-    if args.stand :
+    # set parameter 
+    ROOT_DIR = '/home/bruce1996/LIHC-Anomaly-detection'
+    EXP_M = f'{ROOT_DIR}/data/Ensemble-learning-training-data/lihc_coding_gene_std_by_gene_hbv_only_with_synthetic.txt'
+    ENS_LIST = f'{ROOT_DIR}/data/Hallmark-information/hallmark_coding_gene.txt'
+    STAND = False
+    RUN = 50
+    THREADS = 50
+    OUTPUT_DIR = f'{ROOT_DIR}/data/Ensemble-learning-result/hbv_with_synthetic'
+    PREFIX = 'hbv_only'
+    ##
+    hallmark_list = pd.read_csv(ENS_LIST,sep = '\t')
+    exp_df = pd.read_csv(EXP_M,sep = '\t',index_col=0)
+    if STAND :
         standard_exp = standardization(exp_df)
         standard_exp = standard_exp.T  # type: ignore
     else :
         standard_exp = exp_df.to_numpy()
 
-    if os.path.isdir(args.output_path) == False :
-        os.mkdir(args.output_path)
+    if os.path.isdir(OUTPUT_DIR) == False :
+        os.mkdir(OUTPUT_DIR)
     ### subset by hallmark associated gene
-    ens_id = hallmark_list['EnsID'].values       
-    hallmark_idx = [x in ens_id for x in exp_df.index]
+    hallmark_ens_id = hallmark_list['Ensembl_ID'].values    
+    hallmark_gene_symbol = hallmark_list['Gene_symbol'].values    
+    hallmark_idx = [x in hallmark_ens_id for x in exp_df.index]
     syn_idx = [bool(search('Synthetic',x)) for x in exp_df.index]
 
     y_overall = np.zeros(exp_df.shape[0])
@@ -132,8 +147,10 @@ def main() :
     y_hallmark = np.zeros(exp_df.shape[0])
     y_hallmark[hallmark_idx] = 1
 
-    n_run = args.run
-    n_thread = args.threads
+    n_run = RUN
+    n_thread = THREADS
+    measurements = ['precision_test','precision_overall','recall_test','recall_overall',
+                    'precision_hallmark','precision_hallmark_overall','recall_hallmark','recall_hallmark_overall']
     ensemble = svm_ensemble_learning(standard_exp,y_overall,y_hallmark,run = n_run,t = n_thread)
     ###differ positive / negative ratio
     for r in np.arange(5,55,5) :
@@ -145,30 +162,21 @@ def main() :
         coef_r = np.zeros((n_run,exp_df.shape[1]))
         for i in range(n_run) :
             vote_r[i,:] = result[i,0]  # type: ignore
-            coef_r[i,:] = result[i,5]
-        
-        precision_r = result[:,1]
-        precision_overall_r = result[:,2]
-        recall_r = result[:,3]
-        recall_overall_r = result[:,4]
+            coef_r[i,:] = result[i,1]
+        # a class record the ensemble learning output
+        ensemble_record = ensemble_learning_result(hallmark_ens_list=hallmark_ens_id,
+                                                hallmark_gene_symbol=hallmark_gene_symbol,
+                                                gene_list=exp_df.index)
 
-        precision_h = result[:,6]
-        precision_overall_h = result[:,7]
-        recall_h = result[:,8]
-        recall_overall_h = result[:,9]
+        ensemble_record.svm_vote_result = np.sum(vote_r,axis = 0)
+        ensemble_record.coef = coef_r
+        for m_idx,measurement in enumerate(measurements) :
+            setattr(ensemble_record,measurement,result[:,m_idx+2])
 
-        vote_result = np.sum(vote_r,axis = 0)
-        np.save(args.output_path + args.prefix +'_vote_np_ratio_'+str(r)+ '.npy',vote_result)
-        np.save(args.output_path + args.prefix +'_precision_np_ratio_'+str(r)+ '.npy',precision_r)
-        np.save(args.output_path + args.prefix +'_precision_overall_np_ratio_'+str(r)+ '.npy',precision_overall_r)
-        np.save(args.output_path + args.prefix + '_recall_np_ratio_'+str(r)+ '.npy',recall_r)
-        np.save(args.output_path + args.prefix + '_recall_overall_np_ratio_'+str(r)+ '.npy',recall_overall_r)
-        np.save(args.output_path + args.prefix + '_coef_np_ratio_'+str(r)+ '.npy',coef_r)
-        #hallmark
-        np.save(args.output_path + args.prefix +'_precision_hallmark_np_ratio_'+str(r)+ '.npy',precision_r)
-        np.save(args.output_path + args.prefix +'_precision_overall_hallmark_np_ratio_'+str(r)+ '.npy',precision_overall_r)
-        np.save(args.output_path + args.prefix + '_recall_hallmark_np_ratio_'+str(r)+ '.npy',recall_r)
-        np.save(args.output_path + args.prefix + '_recall_overall_hallmark_np_ratio_'+str(r)+ '.npy',recall_overall_r)
+        with open(f'{OUTPUT_DIR}/{PREFIX}_np_ratio_{r}_ensemble_result.pkl','wb') as f :
+            pickle.dump(ensemble_record,f)
+        f.close()
+        del ensemble_record
 
 if __name__ == '__main__':
     main()
